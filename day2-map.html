@@ -1,0 +1,96 @@
+<!doctype html>
+<html lang="pl">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Dzień 2 — Mapa</title>
+  <style>
+    * { box-sizing: border-box; }
+
+    body {
+      color-scheme: dark;
+      margin: 0;
+      font-family: Arial, sans-serif;
+      background: #0f1115;
+      color: #f3f3f3;
+    }
+
+    .wrap {
+      max-width: 1200px;
+      margin: 0 auto;
+      padding: 32px 20px 60px;
+    }
+
+    .topnav {
+      margin-bottom: 20px;
+    }
+
+    .topnav a {
+      color: #ff8f8f;
+      text-decoration: none;
+      font-weight: bold;
+      margin-right: 18px;
+    }
+
+    .hero {
+      background: #171b22;
+      border-radius: 18px;
+      padding: 28px;
+      box-shadow: 0 14px 32px rgba(0,0,0,0.45);
+      margin-bottom: 24px;
+      text-align: center;
+    }
+
+    .hero h1 {
+      margin: 0 0 8px;
+      font-size: 36px;
+    }
+
+    .hero p {
+      margin: 0;
+      color: #b8bec8;
+      font-size: 17px;
+    }
+
+    .map-box {
+      background: #171b22;
+      border-radius: 18px;
+      padding: 18px;
+      box-shadow: 0 14px 32px rgba(0,0,0,0.45);
+    }
+
+    .map-frame {
+      width: 100%;
+      height: 75vh;
+      min-height: 500px;
+      border: 0;
+      border-radius: 12px;
+      display: block;
+    }
+  </style>
+</head>
+<body>
+  <div class="wrap">
+    <div class="topnav">
+      <a href="index.html">← Strona główna</a>
+      <a href="day2.html">Powrót do Dnia 2</a>
+      <a href="day2-addresses.html">Adresy</a>
+      <a href="day2-restaurants.html">Restauracje</a>
+    </div>
+
+    <section class="hero">
+      <h1>Dzień 2 — Mapa</h1>
+      <p>Interaktywna mapa Google My Maps dla dnia 2</p>
+    </section>
+
+    <section class="map-box">
+      <iframe
+        class="map-frame"
+        src="https://www.google.com/maps/d/embed?mid=1GBRhOjyNZBn62wTQWfe1JHNV-1mDX4c&ehbc=2E312F"
+        allowfullscreen
+        loading="lazy">
+      </iframe>
+    </section>
+  </div>
+</body>
+</html>

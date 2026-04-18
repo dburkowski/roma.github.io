@@ -1,0 +1,165 @@
+<!doctype html>
+<html lang="pl">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Dzień 3 — Restauracje</title>
+  <style>
+    * { box-sizing: border-box; }
+
+    body {
+      color-scheme: dark;
+      margin: 0;
+      font-family: Arial, sans-serif;
+      background: #0f1115;
+      color: #f3f3f3;
+    }
+
+    .wrap {
+      max-width: 1000px;
+      margin: 0 auto;
+      padding: 32px 20px 60px;
+    }
+
+    .topnav {
+      margin-bottom: 20px;
+    }
+
+    .topnav a {
+      color: #ff8f8f;
+      text-decoration: none;
+      font-weight: bold;
+      margin-right: 18px;
+    }
+
+    .hero {
+      background: #171b22;
+      border-radius: 18px;
+      padding: 28px;
+      box-shadow: 0 14px 32px rgba(0,0,0,0.45);
+      margin-bottom: 24px;
+      text-align: center;
+    }
+
+    .hero h1 {
+      margin: 0 0 8px;
+      font-size: 36px;
+    }
+
+    .hero p {
+      margin: 0;
+      color: #b8bec8;
+      font-size: 17px;
+    }
+
+    .list {
+      display: grid;
+      gap: 18px;
+    }
+
+    .card {
+      background: #171b22;
+      border-radius: 18px;
+      padding: 22px;
+      box-shadow: 0 14px 32px rgba(0,0,0,0.45);
+    }
+
+    .place-title {
+      margin: 0 0 12px;
+      font-size: 24px;
+      line-height: 1.25;
+    }
+
+    .place-title a {
+      color: #f3f3f3;
+      text-decoration: none;
+    }
+
+    .place-title a:hover {
+      text-decoration: underline;
+    }
+
+    .meta {
+      margin: 8px 0;
+      font-size: 16px;
+    }
+
+    .label {
+      font-weight: bold;
+      color: #ff8f8f;
+    }
+  </style>
+</head>
+<body>
+  <div class="wrap">
+    <div class="topnav">
+      <a href="index.html">← Strona główna</a>
+      <a href="day3.html">Powrót do Dnia 3</a>
+      <a href="day3-map.html">Mapa</a>
+      <a href="day3-addresses.html">Adresy</a>
+    </div>
+
+    <section class="hero">
+      <h1>Dzień 3 — Restauracje</h1>
+      <p>Kliknij nazwę restauracji, aby otworzyć ją w Google Maps</p>
+    </section>
+
+    <section class="list">
+      <div class="card">
+        <h2 class="place-title">
+          <a href="https://www.google.com/maps/search/?api=1&query=Scialla%20The%20Original%20Street%20Food%20Rome" target="_blank">
+            <strong>1. Scialla The Original Street Food</strong>
+          </a>
+        </h2>
+        <p class="meta"><span class="label">Adres:</span> blisko Campo de’ Fiori</p>
+        <p class="meta"><span class="label">Kuchnia:</span> szybki, nieformalny street food</p>
+        <p class="meta"><span class="label">Czego się spodziewać:</span> idealne na szybki, nieformalny posiłek.</p>
+      </div>
+
+      <div class="card">
+        <h2 class="place-title">
+          <a href="https://www.google.com/maps/search/?api=1&query=RADICI%20Pizzicheria%20Salentina%20Rome" target="_blank">
+            <strong>2. RADICI Pizzicheria Salentina</strong>
+          </a>
+        </h2>
+        <p class="meta"><span class="label">Adres:</span> okolice Campo de’ Fiori</p>
+        <p class="meta"><span class="label">Kuchnia:</span> włoska / lunch</p>
+        <p class="meta"><span class="label">Czego się spodziewać:</span> świetne miejsce na lunch między Navoną a Trastevere.</p>
+      </div>
+
+      <div class="card">
+        <h2 class="place-title">
+          <a href="https://www.google.com/maps/search/?api=1&query=Checchino%20dal%201887%20Rome" target="_blank">
+            <strong>3. Checchino dal 1887</strong>
+          </a>
+        </h2>
+        <p class="meta"><span class="label">Adres:</span> Testaccio — około 10 min od Trastevere</p>
+        <p class="meta"><span class="label">Kuchnia:</span> historyczna kuchnia rzymska, tradycyjne potrawy</p>
+        <p class="meta"><span class="label">Czego się spodziewać:</span> historyczna rzymska restauracja, znana z tradycyjnych potraw.</p>
+      </div>
+
+      <div class="card">
+        <h2 class="place-title">
+          <a href="https://www.google.com/maps/search/?api=1&query=Fraschetta%20da%20Sandro%20Rome" target="_blank">
+            <strong>4. Fraschetta da Sandro</strong>
+          </a>
+        </h2>
+        <p class="meta"><span class="label">Adres:</span> Trastevere / Gianicolo</p>
+        <p class="meta"><span class="label">Kuchnia:</span> lokalna kuchnia rzymska</p>
+        <p class="meta"><span class="label">Czego się spodziewać:</span> świetna lokalna kuchnia, bardzo blisko waszej trasy.</p>
+      </div>
+
+      <div class="card">
+        <h2 class="place-title">
+          <a href="https://www.google.com/maps/search/?api=1&query=Osteria%20degli%20Amici%20Rome" target="_blank">
+            <strong>5. Osteria degli Amici</strong>
+          </a>
+        </h2>
+        <p class="meta"><span class="label">Adres:</span> w samym sercu Trastevere</p>
+        <p class="meta"><span class="label">Kuchnia:</span> włoska / kolacja</p>
+        <p class="meta"><span class="label">Czego się spodziewać:</span> idealna na kolację po spacerze po dzielnicy.</p>
+      </div>
+    </section>
+  </div>
+</body>
+</html>

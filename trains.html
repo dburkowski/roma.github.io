@@ -3,7 +3,7 @@
 <head>
   <meta charset="utf-8">
   <meta name="viewport" content="width=device-width, initial-scale=1">
-  <title>Dzień 3 — Adresy</title>
+  <title>Metro / Kolej – Rzym</title>
   <style>
     * { box-sizing: border-box; }
 
@@ -12,235 +12,141 @@
       font-family: Arial, sans-serif;
       background: #f5f1eb;
       color: #222;
-      line-height: 1.5;
-    }
-
-    .wrap {
-      max-width: 1000px;
-      margin: 0 auto;
-      padding: 32px 20px 60px;
-    }
-
-    .topnav {
-      margin-bottom: 18px;
-    }
-
-    .topnav a {
-      color: #8a1c1c;
-      text-decoration: none;
-      font-weight: bold;
-      margin-right: 18px;
+      line-height: 1.6;
     }
 
     .hero {
-      background: white;
-      border-radius: 18px;
-      padding: 28px;
-      box-shadow: 0 10px 24px rgba(0,0,0,0.08);
-      margin-bottom: 24px;
       text-align: center;
+      padding: 40px 20px 20px;
     }
 
     .hero h1 {
-      margin: 0 0 8px;
-      font-size: 36px;
+      margin: 0;
+      font-size: 40px;
     }
 
     .hero p {
-      margin: 0;
-      color: #666;
-      font-size: 17px;
+      margin-top: 10px;
+      color: #555;
+      font-size: 18px;
     }
 
-    .list {
+    .back {
+      display: inline-block;
+      margin-top: 16px;
+      color: #8a1c1c;
+      text-decoration: none;
+      font-weight: bold;
+    }
+
+    .content {
+      max-width: 900px;
+      margin: 0 auto 60px;
+      padding: 20px;
       display: grid;
-      gap: 18px;
+      gap: 24px;
     }
 
     .card {
-      background: white;
+      background: #fff;
       border-radius: 18px;
-      padding: 22px;
-      box-shadow: 0 10px 24px rgba(0,0,0,0.08);
-      transition: transform 0.15s ease, box-shadow 0.15s ease;
+      padding: 28px;
+      box-shadow: 0 10px 24px rgba(0,0,0,0.10);
     }
 
-    .card:hover {
-      transform: translateY(-2px);
-      box-shadow: 0 14px 28px rgba(0,0,0,0.11);
+    .card h2 {
+      margin: 0 0 18px;
+      font-size: 28px;
+      color: #8a1c1c;
     }
 
-    .place-title {
-      margin: 0 0 12px;
-      font-size: 24px;
-      line-height: 1.25;
+    .card h3 {
+      margin: 22px 0 10px;
+      font-size: 20px;
     }
 
-    .place-title a {
-      color: #222;
-      text-decoration: none;
-    }
-
-    .place-title a:hover {
-      text-decoration: underline;
-    }
-
-    .meta {
+    .card p {
       margin: 8px 0;
-      font-size: 16px;
+    }
+
+    .card ul {
+      margin: 8px 0 0 20px;
+      padding: 0;
+    }
+
+    .card li {
+      margin-bottom: 8px;
     }
 
     .label {
       font-weight: bold;
+    }
+
+    a.link {
       color: #8a1c1c;
+      word-break: break-word;
     }
 
-    .site-link {
-      color: #8a1c1c;
-      text-decoration: none;
-      font-weight: bold;
-    }
-
-    .site-link:hover {
-      text-decoration: underline;
-    }
-
-    .muted {
-      color: #666;
+    .note {
+      margin-top: 14px;
+      padding: 14px 16px;
+      background: #f8f1ec;
+      border-left: 4px solid #8a1c1c;
+      border-radius: 10px;
     }
   </style>
 </head>
 <body>
-  <div class="wrap">
-    <div class="topnav">
-      <a href="index.html">← Strona główna</a>
-      <a href="day3.html">Powrót do Dnia 3</a>
-      <a href="day3-map.html">Mapa</a>
-      <a href="day3-restaurants.html">Restauracje</a>
+  <section class="hero">
+    <h1>Metro / Kolej</h1>
+    <p>Anzio ↔ Rzym</p>
+    <a class="back" href="index.html">← Powrót do strony głównej</a>
+  </section>
+
+  <section class="content">
+    <div class="card">
+      <h2>KOLEJ (Anzio ↔ Rzym)</h2>
+
+      <h3>1. Aplikacja Trenitalia (oficjalna)</h3>
+      <p><span class="label">Android:</span> <a class="link" href="https://play.google.com/store/apps/details?id=com.fs.viaggiatreno" target="_blank">https://play.google.com/store/apps/details?id=com.fs.viaggiatreno</a></p>
+      <p><span class="label">iPhone:</span> <a class="link" href="https://apps.apple.com/it/app/trenitalia/id1069166439" target="_blank">https://apps.apple.com/it/app/trenitalia/id1069166439</a></p>
+      <p><span class="label">Cena:</span> 4–4.60 € w jedną stronę (Anzio → Roma Termini / Roma San Pietro)</p>
+      <p><span class="label">Kasowanie:</span> Bilet jest automatycznie ważny — nie trzeba kasować</p>
+
+      <h3>2. Strona Trenitalia</h3>
+      <p><a class="link" href="https://www.trenitalia.com" target="_blank">https://www.trenitalia.com</a></p>
+      <p><span class="label">Bilet:</span> w formacie PDF, nie trzeba kasować</p>
+
+      <h3>3. Automat na stacji</h3>
+      <p><span class="label">Kasowanie:</span> w zielonej maszynce przed wejściem do pociągu</p>
+      <div class="note">
+        Brak skasowania = mandat 50–100 €
+      </div>
     </div>
 
-    <section class="hero">
-      <h1>Dzień 3 — Adresy</h1>
-      <p>Kliknij nazwę miejsca, aby otworzyć lokalizację w Google Maps</p>
-    </section>
+    <div class="card">
+      <h2>METRO (Rzym)</h2>
 
-    <section class="list">
+      <h3>1. Automat na każdej stacji metra</h3>
+      <p><span class="label">Bilety:</span></p>
+      <ul>
+        <li><strong>BIT 100 min</strong> — 1,50 € (ważny 100 minut od skasowania, metro + autobusy + tramwaje)</li>
+        <li><strong>BIG</strong> — 6 € (bilet dzienny do północy)</li>
+        <li><strong>Roma 24/48/72h</strong> (jeśli chcesz jeździć dużo)</li>
+      </ul>
 
-      <div class="card">
-        <h2 class="place-title">
-          <a href="https://www.google.com/maps/search/?api=1&query=Roma%20Termini" target="_blank">
-            <strong>1. Przyjazd do Rzymu — Stacja Roma Termini</strong>
-          </a>
-        </h2>
-        <p class="meta"><span class="label">Adres:</span> Piazza dei Cinquecento, 00185 Roma</p>
-        <p class="meta"><span class="label">Opis:</span> Przyjazd pociągiem Regionale z Anzio do głównego dworca w Rzymie.</p>
-      </div>
+      <h3>2. Aplikacje mobilne (bez szukania automatów)</h3>
+      <p><strong>myCicero</strong> (oficjalnie wspierana przez ATAC)</p>
+      <p><span class="label">Android:</span> <a class="link" href="https://play.google.com/store/apps/details?id=it.mycicero" target="_blank">https://play.google.com/store/apps/details?id=it.mycicero</a></p>
+      <p><span class="label">iPhone:</span> <a class="link" href="https://apps.apple.com/it/app/mycicero/id531713395" target="_blank">https://apps.apple.com/it/app/mycicero/id531713395</a></p>
+      <p><span class="label">Aktywacja:</span> jednym kliknięciem</p>
 
-      <div class="card">
-        <h2 class="place-title">
-          <a href="https://www.google.com/maps/search/?api=1&query=Largo%20di%20Torre%20Argentina%20Roma" target="_blank">
-            <strong>2. Dojazd do Panteonu — autobus 40 lub 64</strong>
-          </a>
-        </h2>
-        <p class="meta"><span class="label">Trasa:</span> Z Termini → autobus 40 lub 64 → wysiadka: Argentina / Torre Argentina → 5 min pieszo</p>
-        <p class="meta"><span class="label">Czas:</span> ok. 12–15 minut</p>
-      </div>
-
-      <div class="card">
-        <h2 class="place-title">
-          <a href="https://www.google.com/maps/search/?api=1&query=Pantheon%2C%20Piazza%20della%20Rotonda%2C%2000186%20Roma" target="_blank">
-            <strong>3. Pantheon (Panteon)</strong>
-          </a>
-        </h2>
-        <p class="meta"><span class="label">Adres:</span> Piazza della Rotonda, 00186 Roma</p>
-        <p class="meta"><span class="label">Strona:</span>
-          <a class="site-link" href="https://pantheonroma.com" target="_blank">pantheonroma.com</a>
-        </p>
-      </div>
-
-      <div class="card">
-        <h2 class="place-title">
-          <a href="https://www.google.com/maps/search/?api=1&query=Piazza%20Navona%2C%2000186%20Roma" target="_blank">
-            <strong>4. Piazza Navona (Plac Navona)</strong>
-          </a>
-        </h2>
-        <p class="meta"><span class="label">Adres:</span> Piazza Navona, 00186 Roma</p>
-        <p class="meta"><span class="label">Strona:</span> <span class="muted">brak oficjalnej</span></p>
-      </div>
-
-      <div class="card">
-        <h2 class="place-title">
-          <a href="https://www.google.com/maps/search/?api=1&query=Campo%20de%20Fiori%2C%20Piazza%20Campo%20de%20Fiori%2C%2000186%20Roma" target="_blank">
-            <strong>5. Campo de’ Fiori</strong>
-          </a>
-        </h2>
-        <p class="meta"><span class="label">Adres:</span> Piazza Campo de’ Fiori, 00186 Roma</p>
-        <p class="meta"><span class="label">Strona:</span> <span class="muted">brak oficjalnej</span></p>
-      </div>
-
-      <div class="card">
-        <h2 class="place-title">
-          <a href="https://www.google.com/maps/search/?api=1&query=Ponte%20Sisto%2C%2000153%20Roma" target="_blank">
-            <strong>6. Trastevere / Ponte Sisto</strong>
-          </a>
-        </h2>
-        <p class="meta"><span class="label">Adres:</span> Ponte Sisto, 00153 Roma</p>
-        <p class="meta"><span class="label">Strona:</span> <span class="muted">brak oficjalnej</span></p>
-      </div>
-
-      <div class="card">
-        <h2 class="place-title">
-          <a href="https://www.google.com/maps/search/?api=1&query=Basilica%20di%20Santa%20Maria%20in%20Trastevere%2C%20Piazza%20di%20Santa%20Maria%20in%20Trastevere%2C%2000153%20Roma" target="_blank">
-            <strong>7. Bazylika Świętej Marii (Basilica di Santa Maria in Trastevere)</strong>
-          </a>
-        </h2>
-        <p class="meta"><span class="label">Adres:</span> Piazza di Santa Maria in Trastevere, 00153 Roma</p>
-        <p class="meta"><span class="label">Strona:</span>
-          <a class="site-link" href="https://www.santamariatrastevere.it" target="_blank">santamariatrastevere.it</a>
-        </p>
-      </div>
-
-      <div class="card">
-        <h2 class="place-title">
-          <a href="https://www.google.com/maps/search/?api=1&query=Gianicolo%20Janiculum%20Hill%2C%20Piazzale%20Giuseppe%20Garibaldi%2C%2000165%20Roma" target="_blank">
-            <strong>8. Wzgórze Gianicolo</strong>
-          </a>
-        </h2>
-        <p class="meta"><span class="label">Adres:</span> Piazzale Giuseppe Garibaldi, 00165 Roma</p>
-        <p class="meta"><span class="label">Strona:</span> <span class="muted">brak oficjalnej</span></p>
-      </div>
-
-      <div class="card">
-        <h2 class="place-title">
-          <a href="https://www.google.com/maps/search/?api=1&query=Giardino%20degli%20Aranci%2C%20Piazza%20Pietro%20d%27Illiria%2C%2000153%20Roma" target="_blank">
-            <strong>9. Ogrody pomarańczowe (Giardino degli Aranci)</strong>
-          </a>
-        </h2>
-        <p class="meta"><span class="label">Adres:</span> Piazza Pietro d’Illiria, 00153 Roma</p>
-        <p class="meta"><span class="label">Strona:</span> <span class="muted">brak oficjalnej</span></p>
-      </div>
-
-      <div class="card">
-        <h2 class="place-title">
-          <a href="https://www.google.com/maps/search/?api=1&query=Villa%20Borghese%2C%20Piazzale%20Napoleone%20I%2C%2000197%20Roma" target="_blank">
-            <strong>10. Villa Borghese</strong>
-          </a>
-        </h2>
-        <p class="meta"><span class="label">Adres:</span> Piazzale Napoleone I, 00197 Roma</p>
-        <p class="meta"><span class="label">Strona:</span> <span class="muted">brak oficjalnej (park publiczny)</span></p>
-      </div>
-
-      <div class="card">
-        <h2 class="place-title">
-          <a href="https://www.google.com/maps/search/?api=1&query=Metro%20Spagna%20Roma" target="_blank">
-            <strong>11. Powrót do Anzio — Spagna/Flaminio (A) → Termini → pociąg Regionale</strong>
-          </a>
-        </h2>
-        <p class="meta"><span class="label">Trasa:</span> Spacer do Spagna lub Flaminio → Metro A do Termini → pociąg Regionale do Anzio</p>
-        <p class="meta"><span class="label">Czas:</span> ok. 1h 35 min łącznie</p>
-      </div>
-
-    </section>
-  </div>
+      <h3>3. Kioski / Tabacchi (sklepy z literą T)</h3>
+      <ul>
+        <li>Kasowanie pociągu: w bramce</li>
+        <li>Kasowanie w autobusie: w żółtej maszynce</li>
+      </ul>
+    </div>
+  </section>
 </body>
 </html>

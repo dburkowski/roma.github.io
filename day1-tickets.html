@@ -1,1 +1,136 @@
+<!doctype html>
+<html lang="pl">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Dzień 1 – Bilety</title>
+  <style>
+    * { box-sizing: border-box; }
 
+    body {
+      margin: 0;
+      font-family: Arial, sans-serif;
+      background: #f5f1eb;
+      color: #222;
+      line-height: 1.6;
+    }
+
+    .hero {
+      text-align: center;
+      padding: 40px 20px 20px;
+    }
+
+    .hero h1 {
+      margin: 0;
+      font-size: 40px;
+    }
+
+    .hero p {
+      margin-top: 10px;
+      color: #555;
+      font-size: 18px;
+    }
+
+    .back {
+      display: inline-block;
+      margin-top: 16px;
+      color: #8a1c1c;
+      text-decoration: none;
+      font-weight: bold;
+    }
+
+    .content {
+      max-width: 900px;
+      margin: 0 auto 60px;
+      padding: 20px;
+      display: grid;
+      gap: 24px;
+    }
+
+    .card {
+      background: #fff;
+      border-radius: 18px;
+      padding: 28px;
+      box-shadow: 0 10px 24px rgba(0,0,0,0.10);
+    }
+
+    .card h2 {
+      margin: 0 0 18px;
+      font-size: 28px;
+      color: #8a1c1c;
+    }
+
+    .card h3 {
+      margin: 0 0 14px;
+      font-size: 22px;
+      color: #222;
+    }
+
+    .card p {
+      margin: 8px 0;
+    }
+
+    .card ul {
+      margin: 10px 0 0 20px;
+      padding: 0;
+    }
+
+    .card li {
+      margin-bottom: 8px;
+    }
+
+    .label {
+      font-weight: bold;
+    }
+
+    .link {
+      color: #8a1c1c;
+      word-break: break-word;
+    }
+
+    .section-letter {
+      color: #8a1c1c;
+      font-weight: bold;
+      margin-bottom: 12px;
+      font-size: 20px;
+    }
+  </style>
+</head>
+<body>
+  <section class="hero">
+    <h1>Dzień 1 – Bilety</h1>
+    <p>Koloseum → Forum → Palatyn → Trevi → Hiszpańskie Schody</p>
+    <a class="back" href="day1.html">← Powrót do Dnia 1</a>
+  </section>
+
+  <section class="content">
+    <div class="card">
+      <div class="section-letter">A) Bilety online (oficjalne linki)</div>
+      <h3>1. Koloseum + Forum Romanum + Palatyn</h3>
+      <p><span class="label">Oficjalny link:</span><br>
+        <a class="link" href="https://ticketing.colosseo.it/en/categorie/singoli-1-8-persone/" target="_blank">
+          https://ticketing.colosseo.it/en/categorie/singoli-1-8-persone/
+        </a>
+      </p>
+      <p><span class="label">Cena:</span> 18–20 €</p>
+      <p><span class="label">Dlaczego online:</span> limity wejść, szybkie wyprzedanie godzin</p>
+    </div>
+
+    <div class="card">
+      <div class="section-letter">B) Bilety tylko w kasie</div>
+      <p>Brak — wszystkie płatne miejsca dnia 1 mają sprzedaż online.</p>
+    </div>
+
+    <div class="card">
+      <div class="section-letter">C) Bez biletów (darmowe)</div>
+      <ul>
+        <li>Łuk Konstantyna</li>
+        <li>Piazza Venezia</li>
+        <li>Fontanna di Trevi</li>
+        <li>Piazza di Spagna</li>
+        <li>Hiszpańskie Schody (zakaz siadania)</li>
+      </ul>
+    </div>
+  </section>
+</body>
+</html>

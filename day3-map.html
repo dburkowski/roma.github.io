@@ -1,569 +1,95 @@
-<!DOCTYPE html>
-<html>
+<!doctype html>
+<html lang="pl">
 <head>
-    
-    <meta http-equiv="content-type" content="text/html; charset=UTF-8" />
-    <script src="https://cdn.jsdelivr.net/npm/leaflet@1.9.3/dist/leaflet.js"></script>
-    <script src="https://code.jquery.com/jquery-3.7.1.min.js"></script>
-    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.2.2/dist/js/bootstrap.bundle.min.js"></script>
-    <script src="https://cdnjs.cloudflare.com/ajax/libs/Leaflet.awesome-markers/2.0.2/leaflet.awesome-markers.js"></script>
-    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/leaflet@1.9.3/dist/leaflet.css"/>
-    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@5.2.2/dist/css/bootstrap.min.css"/>
-    <link rel="stylesheet" href="https://netdna.bootstrapcdn.com/bootstrap/3.0.0/css/bootstrap-glyphicons.css"/>
-    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/@fortawesome/fontawesome-free@6.2.0/css/all.min.css"/>
-    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/Leaflet.awesome-markers/2.0.2/leaflet.awesome-markers.css"/>
-    <link rel="stylesheet" href="https://cdn.jsdelivr.net/gh/python-visualization/folium/folium/templates/leaflet.awesome.rotate.min.css"/>
-    
-            <meta name="viewport" content="width=device-width,
-                initial-scale=1.0, maximum-scale=1.0, user-scalable=no" />
-            <style>
-                #map_5df03f9769ce3e747d73173be9205c0c {
-                    position: relative;
-                    width: 100.0%;
-                    height: 100.0%;
-                    left: 0.0%;
-                    top: 0.0%;
-                }
-                .leaflet-container { font-size: 1rem; }
-            </style>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Dzień 3 — Mapa</title>
+  <style>
+    * { box-sizing: border-box; }
 
-            <style>html, body {
-                width: 100%;
-                height: 100%;
-                margin: 0;
-                padding: 0;
-            }
-            </style>
+    body {
+      margin: 0;
+      font-family: Arial, sans-serif;
+      background: #f5f1eb;
+      color: #222;
+    }
 
-            <style>#map {
-                position:absolute;
-                top:0;
-                bottom:0;
-                right:0;
-                left:0;
-                }
-            </style>
+    .wrap {
+      max-width: 1200px;
+      margin: 0 auto;
+      padding: 32px 20px 60px;
+    }
 
-            <script>
-                L_NO_TOUCH = false;
-                L_DISABLE_3D = false;
-            </script>
+    .topnav {
+      margin-bottom: 20px;
+    }
 
-        
+    .topnav a {
+      color: #8a1c1c;
+      text-decoration: none;
+      font-weight: bold;
+      margin-right: 18px;
+    }
+
+    .hero {
+      background: white;
+      border-radius: 18px;
+      padding: 28px;
+      box-shadow: 0 10px 24px rgba(0,0,0,0.08);
+      margin-bottom: 24px;
+      text-align: center;
+    }
+
+    .hero h1 {
+      margin: 0 0 8px;
+      font-size: 36px;
+    }
+
+    .hero p {
+      margin: 0;
+      color: #666;
+      font-size: 17px;
+    }
+
+    .map-box {
+      background: white;
+      border-radius: 18px;
+      padding: 18px;
+      box-shadow: 0 10px 24px rgba(0,0,0,0.08);
+    }
+
+    .map-frame {
+      width: 100%;
+      height: 75vh;
+      min-height: 500px;
+      border: 0;
+      border-radius: 12px;
+      display: block;
+    }
+  </style>
 </head>
 <body>
-    
-    
-<div style="
- position: fixed;
- top: 10px; left: 50px; z-index: 9999;
- background: rgba(255,255,255,0.92);
- padding: 10px 14px;
- border: 1px solid #bbb;
- border-radius: 8px;
- font-family: Arial, sans-serif;
- box-shadow: 0 1px 6px rgba(0,0,0,0.15);
- max-width: 420px;">
-  <div style="font-size:18px;font-weight:700;margin-bottom:4px;">Dzień 3 — mapa trasy</div>
-  <div style="font-size:13px;">Trasa łączy punkty dokładnie w podanej kolejności.</div>
-</div>
-    
-            <div class="folium-map" id="map_5df03f9769ce3e747d73173be9205c0c" ></div>
-        
+  <div class="wrap">
+    <div class="topnav">
+      <a href="index.html">← Strona główna</a>
+      <a href="day3.html">Powrót do Dnia 3</a>
+      <a href="day3-addresses.html">Adresy</a>
+      <a href="day3-restaurants.html">Restauracje</a>
+    </div>
+
+    <section class="hero">
+      <h1>Dzień 3 — Mapa</h1>
+      <p>Interaktywna mapa Google My Maps dla dnia 3</p>
+    </section>
+
+    <section class="map-box">
+      <iframe
+        class="map-frame"
+        src="https://www.google.com/maps/d/embed?mid=19cNl8c__TgrXB_BOeeDh-RIANEHnigs&ehbc=2E312F"
+        allowfullscreen
+        loading="lazy">
+      </iframe>
+    </section>
+  </div>
 </body>
-<script>
-    
-    
-            var map_5df03f9769ce3e747d73173be9205c0c = L.map(
-                "map_5df03f9769ce3e747d73173be9205c0c",
-                {
-                    center: [41.893211111111114, 12.474233333333334],
-                    crs: L.CRS.EPSG3857,
-                    ...{
-  "zoom": 14,
-  "zoomControl": true,
-  "preferCanvas": false,
-}
-
-                }
-            );
-            L.control.scale().addTo(map_5df03f9769ce3e747d73173be9205c0c);
-
-            
-
-        
-    
-            var tile_layer_6665f2ae0037f90b0b91e7c05aa841d5 = L.tileLayer(
-                "https://tile.openstreetmap.org/{z}/{x}/{y}.png",
-                {
-  "minZoom": 0,
-  "maxZoom": 19,
-  "maxNativeZoom": 19,
-  "noWrap": false,
-  "attribution": "\u0026copy; \u003ca href=\"https://www.openstreetmap.org/copyright\"\u003eOpenStreetMap\u003c/a\u003e contributors",
-  "subdomains": "abc",
-  "detectRetina": false,
-  "tms": false,
-  "opacity": 1,
-}
-
-            );
-        
-    
-            tile_layer_6665f2ae0037f90b0b91e7c05aa841d5.addTo(map_5df03f9769ce3e747d73173be9205c0c);
-        
-    
-            var poly_line_f78cedd690dfead3eface5dd727e6da5 = L.polyline(
-                [[41.8986, 12.4769], [41.8992, 12.4731], [41.8957, 12.4722], [41.8931, 12.4696], [41.8898, 12.4701], [41.8913, 12.4677], [41.8859, 12.4794], [41.9142, 12.4923], [41.8711, 12.4668]],
-                {"bubblingMouseEvents": true, "color": "red", "dashArray": null, "dashOffset": null, "fill": false, "fillColor": "red", "fillOpacity": 0.2, "fillRule": "evenodd", "lineCap": "round", "lineJoin": "round", "noClip": false, "opacity": 0.9, "smoothFactor": 1.0, "stroke": true, "weight": 5}
-            ).addTo(map_5df03f9769ce3e747d73173be9205c0c);
-        
-    
-            var circle_marker_e7570eddc0c3da14680884b8891ed352 = L.circleMarker(
-                [41.8986, 12.4769],
-                {"bubblingMouseEvents": true, "color": "red", "dashArray": null, "dashOffset": null, "fill": true, "fillColor": "red", "fillOpacity": 0.95, "fillRule": "evenodd", "lineCap": "round", "lineJoin": "round", "opacity": 1.0, "radius": 8, "stroke": true, "weight": 3}
-            ).addTo(map_5df03f9769ce3e747d73173be9205c0c);
-        
-    
-        var popup_8f3c0766e3aaded60fc68ac21bb3800b = L.popup({
-  "maxWidth": "100%",
-});
-
-        
-            
-                var html_2bd13f6898ac3237b065dc319db020b2 = $(`<div id="html_2bd13f6898ac3237b065dc319db020b2" style="width: 100.0%; height: 100.0%;">1. Pantheon (Panteon)</div>`)[0];
-                popup_8f3c0766e3aaded60fc68ac21bb3800b.setContent(html_2bd13f6898ac3237b065dc319db020b2);
-            
-        
-
-        circle_marker_e7570eddc0c3da14680884b8891ed352.bindPopup(popup_8f3c0766e3aaded60fc68ac21bb3800b)
-        ;
-
-        
-    
-    
-            circle_marker_e7570eddc0c3da14680884b8891ed352.bindTooltip(
-                `<div>
-                     1. Pantheon (Panteon)
-                 </div>`,
-                {
-  "sticky": true,
-}
-            );
-        
-    
-            var marker_104d6fd06f5c44ec86029cdd716024e7 = L.marker(
-                [41.8986, 12.4769],
-                {
-}
-            ).addTo(map_5df03f9769ce3e747d73173be9205c0c);
-        
-    
-            var div_icon_78d8f378e44053614c148c207658b160 = L.divIcon({
-  "html": "\u003cdiv style=\u0027font-size:10pt;color:white;font-weight:bold;transform:translate(-4px,-10px)\u0027\u003e1\u003c/div\u003e",
-  "className": "empty",
-});
-        
-    
-                marker_104d6fd06f5c44ec86029cdd716024e7.setIcon(div_icon_78d8f378e44053614c148c207658b160);
-            
-    
-            var circle_marker_68d9bd8104042e00b6d328f1c9cd322c = L.circleMarker(
-                [41.8992, 12.4731],
-                {"bubblingMouseEvents": true, "color": "red", "dashArray": null, "dashOffset": null, "fill": true, "fillColor": "red", "fillOpacity": 0.95, "fillRule": "evenodd", "lineCap": "round", "lineJoin": "round", "opacity": 1.0, "radius": 8, "stroke": true, "weight": 3}
-            ).addTo(map_5df03f9769ce3e747d73173be9205c0c);
-        
-    
-        var popup_f79f881eafcff9d299a27d7bdeb16ada = L.popup({
-  "maxWidth": "100%",
-});
-
-        
-            
-                var html_76d083ceebdbab20bf60da0be7c348c1 = $(`<div id="html_76d083ceebdbab20bf60da0be7c348c1" style="width: 100.0%; height: 100.0%;">2. Piazza Navona (Plac Navona)</div>`)[0];
-                popup_f79f881eafcff9d299a27d7bdeb16ada.setContent(html_76d083ceebdbab20bf60da0be7c348c1);
-            
-        
-
-        circle_marker_68d9bd8104042e00b6d328f1c9cd322c.bindPopup(popup_f79f881eafcff9d299a27d7bdeb16ada)
-        ;
-
-        
-    
-    
-            circle_marker_68d9bd8104042e00b6d328f1c9cd322c.bindTooltip(
-                `<div>
-                     2. Piazza Navona (Plac Navona)
-                 </div>`,
-                {
-  "sticky": true,
-}
-            );
-        
-    
-            var marker_fe24a9498e8a8ba1e8c3fb133f83d1ed = L.marker(
-                [41.8992, 12.4731],
-                {
-}
-            ).addTo(map_5df03f9769ce3e747d73173be9205c0c);
-        
-    
-            var div_icon_342a4eab50e9e892959bd73f6eb35958 = L.divIcon({
-  "html": "\u003cdiv style=\u0027font-size:10pt;color:white;font-weight:bold;transform:translate(-4px,-10px)\u0027\u003e2\u003c/div\u003e",
-  "className": "empty",
-});
-        
-    
-                marker_fe24a9498e8a8ba1e8c3fb133f83d1ed.setIcon(div_icon_342a4eab50e9e892959bd73f6eb35958);
-            
-    
-            var circle_marker_9adcdd34b412cad1e5f8b03a52a6a0ba = L.circleMarker(
-                [41.8957, 12.4722],
-                {"bubblingMouseEvents": true, "color": "red", "dashArray": null, "dashOffset": null, "fill": true, "fillColor": "red", "fillOpacity": 0.95, "fillRule": "evenodd", "lineCap": "round", "lineJoin": "round", "opacity": 1.0, "radius": 8, "stroke": true, "weight": 3}
-            ).addTo(map_5df03f9769ce3e747d73173be9205c0c);
-        
-    
-        var popup_cae30e37be05a543d1ceb49efdea2d96 = L.popup({
-  "maxWidth": "100%",
-});
-
-        
-            
-                var html_a54394dbe54d063253036d20851e529f = $(`<div id="html_a54394dbe54d063253036d20851e529f" style="width: 100.0%; height: 100.0%;">3. Campo de’ Fiori</div>`)[0];
-                popup_cae30e37be05a543d1ceb49efdea2d96.setContent(html_a54394dbe54d063253036d20851e529f);
-            
-        
-
-        circle_marker_9adcdd34b412cad1e5f8b03a52a6a0ba.bindPopup(popup_cae30e37be05a543d1ceb49efdea2d96)
-        ;
-
-        
-    
-    
-            circle_marker_9adcdd34b412cad1e5f8b03a52a6a0ba.bindTooltip(
-                `<div>
-                     3. Campo de’ Fiori
-                 </div>`,
-                {
-  "sticky": true,
-}
-            );
-        
-    
-            var marker_84a331f9f6385cad2c55dbb0088fa70f = L.marker(
-                [41.8957, 12.4722],
-                {
-}
-            ).addTo(map_5df03f9769ce3e747d73173be9205c0c);
-        
-    
-            var div_icon_0b49073c788a4c74f93c342f399ff0c2 = L.divIcon({
-  "html": "\u003cdiv style=\u0027font-size:10pt;color:white;font-weight:bold;transform:translate(-4px,-10px)\u0027\u003e3\u003c/div\u003e",
-  "className": "empty",
-});
-        
-    
-                marker_84a331f9f6385cad2c55dbb0088fa70f.setIcon(div_icon_0b49073c788a4c74f93c342f399ff0c2);
-            
-    
-            var circle_marker_65c33491951eedb3422eefe14d04e84f = L.circleMarker(
-                [41.8931, 12.4696],
-                {"bubblingMouseEvents": true, "color": "red", "dashArray": null, "dashOffset": null, "fill": true, "fillColor": "red", "fillOpacity": 0.95, "fillRule": "evenodd", "lineCap": "round", "lineJoin": "round", "opacity": 1.0, "radius": 8, "stroke": true, "weight": 3}
-            ).addTo(map_5df03f9769ce3e747d73173be9205c0c);
-        
-    
-        var popup_87b62c5f2f8f18e7abf51610e60ce7ae = L.popup({
-  "maxWidth": "100%",
-});
-
-        
-            
-                var html_cbf0919ef05f14be88922691aa442161 = $(`<div id="html_cbf0919ef05f14be88922691aa442161" style="width: 100.0%; height: 100.0%;">4. Ponte Sisto → wejście do Trastevere</div>`)[0];
-                popup_87b62c5f2f8f18e7abf51610e60ce7ae.setContent(html_cbf0919ef05f14be88922691aa442161);
-            
-        
-
-        circle_marker_65c33491951eedb3422eefe14d04e84f.bindPopup(popup_87b62c5f2f8f18e7abf51610e60ce7ae)
-        ;
-
-        
-    
-    
-            circle_marker_65c33491951eedb3422eefe14d04e84f.bindTooltip(
-                `<div>
-                     4. Ponte Sisto → wejście do Trastevere
-                 </div>`,
-                {
-  "sticky": true,
-}
-            );
-        
-    
-            var marker_5e6adec65e2509d130d67611452f6f74 = L.marker(
-                [41.8931, 12.4696],
-                {
-}
-            ).addTo(map_5df03f9769ce3e747d73173be9205c0c);
-        
-    
-            var div_icon_2e98ba311b953eef11f36d5d61e6bf1a = L.divIcon({
-  "html": "\u003cdiv style=\u0027font-size:10pt;color:white;font-weight:bold;transform:translate(-4px,-10px)\u0027\u003e4\u003c/div\u003e",
-  "className": "empty",
-});
-        
-    
-                marker_5e6adec65e2509d130d67611452f6f74.setIcon(div_icon_2e98ba311b953eef11f36d5d61e6bf1a);
-            
-    
-            var circle_marker_2633ca8905cd3c807b1535f92d492e7a = L.circleMarker(
-                [41.8898, 12.4701],
-                {"bubblingMouseEvents": true, "color": "red", "dashArray": null, "dashOffset": null, "fill": true, "fillColor": "red", "fillOpacity": 0.95, "fillRule": "evenodd", "lineCap": "round", "lineJoin": "round", "opacity": 1.0, "radius": 8, "stroke": true, "weight": 3}
-            ).addTo(map_5df03f9769ce3e747d73173be9205c0c);
-        
-    
-        var popup_ff82b9a478295433457c998dd2102a08 = L.popup({
-  "maxWidth": "100%",
-});
-
-        
-            
-                var html_383cfd339f25bd8286644ea829876ed8 = $(`<div id="html_383cfd339f25bd8286644ea829876ed8" style="width: 100.0%; height: 100.0%;">5. Basilica di Santa Maria in Trastevere</div>`)[0];
-                popup_ff82b9a478295433457c998dd2102a08.setContent(html_383cfd339f25bd8286644ea829876ed8);
-            
-        
-
-        circle_marker_2633ca8905cd3c807b1535f92d492e7a.bindPopup(popup_ff82b9a478295433457c998dd2102a08)
-        ;
-
-        
-    
-    
-            circle_marker_2633ca8905cd3c807b1535f92d492e7a.bindTooltip(
-                `<div>
-                     5. Basilica di Santa Maria in Trastevere
-                 </div>`,
-                {
-  "sticky": true,
-}
-            );
-        
-    
-            var marker_5c3225456130d944b23e66b6308adb96 = L.marker(
-                [41.8898, 12.4701],
-                {
-}
-            ).addTo(map_5df03f9769ce3e747d73173be9205c0c);
-        
-    
-            var div_icon_a2938e04578039687829d92e75b5cff9 = L.divIcon({
-  "html": "\u003cdiv style=\u0027font-size:10pt;color:white;font-weight:bold;transform:translate(-4px,-10px)\u0027\u003e5\u003c/div\u003e",
-  "className": "empty",
-});
-        
-    
-                marker_5c3225456130d944b23e66b6308adb96.setIcon(div_icon_a2938e04578039687829d92e75b5cff9);
-            
-    
-            var circle_marker_d438b6700695164db5e55b553c43aa50 = L.circleMarker(
-                [41.8913, 12.4677],
-                {"bubblingMouseEvents": true, "color": "red", "dashArray": null, "dashOffset": null, "fill": true, "fillColor": "red", "fillOpacity": 0.95, "fillRule": "evenodd", "lineCap": "round", "lineJoin": "round", "opacity": 1.0, "radius": 8, "stroke": true, "weight": 3}
-            ).addTo(map_5df03f9769ce3e747d73173be9205c0c);
-        
-    
-        var popup_a1650c9ec41f1fa9dda8fe547fb3668b = L.popup({
-  "maxWidth": "100%",
-});
-
-        
-            
-                var html_23a6fa010341db1e10811b6d35f190ba = $(`<div id="html_23a6fa010341db1e10811b6d35f190ba" style="width: 100.0%; height: 100.0%;">6. Wejście na Gianicolo (Janiculum Hill)</div>`)[0];
-                popup_a1650c9ec41f1fa9dda8fe547fb3668b.setContent(html_23a6fa010341db1e10811b6d35f190ba);
-            
-        
-
-        circle_marker_d438b6700695164db5e55b553c43aa50.bindPopup(popup_a1650c9ec41f1fa9dda8fe547fb3668b)
-        ;
-
-        
-    
-    
-            circle_marker_d438b6700695164db5e55b553c43aa50.bindTooltip(
-                `<div>
-                     6. Wejście na Gianicolo (Janiculum Hill)
-                 </div>`,
-                {
-  "sticky": true,
-}
-            );
-        
-    
-            var marker_99969d0708bc63cac76a8687b7dc8171 = L.marker(
-                [41.8913, 12.4677],
-                {
-}
-            ).addTo(map_5df03f9769ce3e747d73173be9205c0c);
-        
-    
-            var div_icon_bcd49f37652e52c44fc692b271d2fc4a = L.divIcon({
-  "html": "\u003cdiv style=\u0027font-size:10pt;color:white;font-weight:bold;transform:translate(-4px,-10px)\u0027\u003e6\u003c/div\u003e",
-  "className": "empty",
-});
-        
-    
-                marker_99969d0708bc63cac76a8687b7dc8171.setIcon(div_icon_bcd49f37652e52c44fc692b271d2fc4a);
-            
-    
-            var circle_marker_6831f3c0820a2389a5cc137a711030bb = L.circleMarker(
-                [41.8859, 12.4794],
-                {"bubblingMouseEvents": true, "color": "red", "dashArray": null, "dashOffset": null, "fill": true, "fillColor": "red", "fillOpacity": 0.95, "fillRule": "evenodd", "lineCap": "round", "lineJoin": "round", "opacity": 1.0, "radius": 8, "stroke": true, "weight": 3}
-            ).addTo(map_5df03f9769ce3e747d73173be9205c0c);
-        
-    
-        var popup_2fbfc65ebf309a5de3cc52989f046b4c = L.popup({
-  "maxWidth": "100%",
-});
-
-        
-            
-                var html_6cae5a1b0fe36f68712cd3b23ffb818e = $(`<div id="html_6cae5a1b0fe36f68712cd3b23ffb818e" style="width: 100.0%; height: 100.0%;">7. Giardino degli Aranci (Ogród Pomarańczowy)</div>`)[0];
-                popup_2fbfc65ebf309a5de3cc52989f046b4c.setContent(html_6cae5a1b0fe36f68712cd3b23ffb818e);
-            
-        
-
-        circle_marker_6831f3c0820a2389a5cc137a711030bb.bindPopup(popup_2fbfc65ebf309a5de3cc52989f046b4c)
-        ;
-
-        
-    
-    
-            circle_marker_6831f3c0820a2389a5cc137a711030bb.bindTooltip(
-                `<div>
-                     7. Giardino degli Aranci (Ogród Pomarańczowy)
-                 </div>`,
-                {
-  "sticky": true,
-}
-            );
-        
-    
-            var marker_8adc121ccaf830bf5087240a6df3b82b = L.marker(
-                [41.8859, 12.4794],
-                {
-}
-            ).addTo(map_5df03f9769ce3e747d73173be9205c0c);
-        
-    
-            var div_icon_c33d5a88c0a6fca64ba9b5d3a521ddb6 = L.divIcon({
-  "html": "\u003cdiv style=\u0027font-size:10pt;color:white;font-weight:bold;transform:translate(-4px,-10px)\u0027\u003e7\u003c/div\u003e",
-  "className": "empty",
-});
-        
-    
-                marker_8adc121ccaf830bf5087240a6df3b82b.setIcon(div_icon_c33d5a88c0a6fca64ba9b5d3a521ddb6);
-            
-    
-            var circle_marker_84a148612324ab1fbf3bbd5467906a14 = L.circleMarker(
-                [41.9142, 12.4923],
-                {"bubblingMouseEvents": true, "color": "red", "dashArray": null, "dashOffset": null, "fill": true, "fillColor": "red", "fillOpacity": 0.95, "fillRule": "evenodd", "lineCap": "round", "lineJoin": "round", "opacity": 1.0, "radius": 8, "stroke": true, "weight": 3}
-            ).addTo(map_5df03f9769ce3e747d73173be9205c0c);
-        
-    
-        var popup_b86a909ab2e35caa6e6899b3200980de = L.popup({
-  "maxWidth": "100%",
-});
-
-        
-            
-                var html_814484dd2e5f38e2211de6f5f863faac = $(`<div id="html_814484dd2e5f38e2211de6f5f863faac" style="width: 100.0%; height: 100.0%;">8. Villa Borghese (Park Borghese)</div>`)[0];
-                popup_b86a909ab2e35caa6e6899b3200980de.setContent(html_814484dd2e5f38e2211de6f5f863faac);
-            
-        
-
-        circle_marker_84a148612324ab1fbf3bbd5467906a14.bindPopup(popup_b86a909ab2e35caa6e6899b3200980de)
-        ;
-
-        
-    
-    
-            circle_marker_84a148612324ab1fbf3bbd5467906a14.bindTooltip(
-                `<div>
-                     8. Villa Borghese (Park Borghese)
-                 </div>`,
-                {
-  "sticky": true,
-}
-            );
-        
-    
-            var marker_999ce1d91356bc420f75077060bf2c23 = L.marker(
-                [41.9142, 12.4923],
-                {
-}
-            ).addTo(map_5df03f9769ce3e747d73173be9205c0c);
-        
-    
-            var div_icon_3edbda3a23243f5e8926a6cf3222ec5e = L.divIcon({
-  "html": "\u003cdiv style=\u0027font-size:10pt;color:white;font-weight:bold;transform:translate(-4px,-10px)\u0027\u003e8\u003c/div\u003e",
-  "className": "empty",
-});
-        
-    
-                marker_999ce1d91356bc420f75077060bf2c23.setIcon(div_icon_3edbda3a23243f5e8926a6cf3222ec5e);
-            
-    
-            var circle_marker_d7204eec69b9ae898195c32ca84f92d6 = L.circleMarker(
-                [41.8711, 12.4668],
-                {"bubblingMouseEvents": true, "color": "red", "dashArray": null, "dashOffset": null, "fill": true, "fillColor": "red", "fillOpacity": 0.95, "fillRule": "evenodd", "lineCap": "round", "lineJoin": "round", "opacity": 1.0, "radius": 8, "stroke": true, "weight": 3}
-            ).addTo(map_5df03f9769ce3e747d73173be9205c0c);
-        
-    
-        var popup_acc3dbd4745dc12358c860d6e7a0fa09 = L.popup({
-  "maxWidth": "100%",
-});
-
-        
-            
-                var html_0ff285c7b78a956ffc604ffd106a8338 = $(`<div id="html_0ff285c7b78a956ffc604ffd106a8338" style="width: 100.0%; height: 100.0%;">9. Stacja kolejowa Roma Trastevere</div>`)[0];
-                popup_acc3dbd4745dc12358c860d6e7a0fa09.setContent(html_0ff285c7b78a956ffc604ffd106a8338);
-            
-        
-
-        circle_marker_d7204eec69b9ae898195c32ca84f92d6.bindPopup(popup_acc3dbd4745dc12358c860d6e7a0fa09)
-        ;
-
-        
-    
-    
-            circle_marker_d7204eec69b9ae898195c32ca84f92d6.bindTooltip(
-                `<div>
-                     9. Stacja kolejowa Roma Trastevere
-                 </div>`,
-                {
-  "sticky": true,
-}
-            );
-        
-    
-            var marker_21e3866fa7a7e3f7098dfab46bd1d04a = L.marker(
-                [41.8711, 12.4668],
-                {
-}
-            ).addTo(map_5df03f9769ce3e747d73173be9205c0c);
-        
-    
-            var div_icon_1acf054e1170f86e10dd182679a91a5f = L.divIcon({
-  "html": "\u003cdiv style=\u0027font-size:10pt;color:white;font-weight:bold;transform:translate(-4px,-10px)\u0027\u003e9\u003c/div\u003e",
-  "className": "empty",
-});
-        
-    
-                marker_21e3866fa7a7e3f7098dfab46bd1d04a.setIcon(div_icon_1acf054e1170f86e10dd182679a91a5f);
-            
-    
-            map_5df03f9769ce3e747d73173be9205c0c.fitBounds(
-                [[41.8986, 12.4769], [41.8992, 12.4731], [41.8957, 12.4722], [41.8931, 12.4696], [41.8898, 12.4701], [41.8913, 12.4677], [41.8859, 12.4794], [41.9142, 12.4923], [41.8711, 12.4668]],
-                {"padding": [30, 30]}
-            );
-        
-</script>
 </html>

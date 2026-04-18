@@ -5,33 +5,26 @@
   <meta name="viewport" content="width=device-width, initial-scale=1">
   <title>Rzym – plan zwiedzania</title>
   <style>
-    * {
-      box-sizing: border-box;
-    }
-
+    * { box-sizing: border-box; }
     body {
       margin: 0;
       font-family: Arial, sans-serif;
       background: #f5f1eb;
       color: #222;
     }
-
     .hero {
       text-align: center;
       padding: 50px 20px 30px;
     }
-
     .hero h1 {
       margin: 0;
       font-size: 42px;
     }
-
     .hero p {
       margin-top: 12px;
       font-size: 18px;
       color: #555;
     }
-
     .cards {
       max-width: 1200px;
       margin: 0 auto 60px;
@@ -40,7 +33,6 @@
       grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
       gap: 24px;
     }
-
     .card {
       position: relative;
       display: block;
@@ -52,19 +44,16 @@
       box-shadow: 0 10px 24px rgba(0,0,0,0.18);
       transition: transform 0.2s ease, box-shadow 0.2s ease;
     }
-
     .card:hover {
       transform: translateY(-6px);
       box-shadow: 0 16px 32px rgba(0,0,0,0.25);
     }
-
     .card img {
       width: 100%;
       height: 100%;
       object-fit: cover;
       display: block;
     }
-
     .overlay {
       position: absolute;
       inset: 0;
@@ -73,13 +62,11 @@
       align-items: end;
       padding: 24px;
     }
-
     .label {
       font-size: 30px;
       font-weight: bold;
       line-height: 1.1;
     }
-
     .sub {
       margin-top: 8px;
       font-size: 15px;
@@ -90,36 +77,36 @@
 <body>
   <section class="hero">
     <h1>Rzym – plan zwiedzania</h1>
-    <p>Wybierz dzień, aby otworzyć mapę trasy</p>
+    <p>Wybierz dzień</p>
   </section>
 
   <section class="cards">
     <a class="card" href="day1.html">
-      <img src="rome1.jpg" alt="Dzień 1 w Rzymie">
+      <img src="home-day1.jpg" alt="Dzień 1">
       <div class="overlay">
         <div>
           <div class="label">Dzień 1</div>
-          <div class="sub">Antyczne serce Rzymu</div>
+          <div class="sub">Mapa, adresy i restauracje</div>
         </div>
       </div>
     </a>
 
     <a class="card" href="day2.html">
-      <img src="rome2.jpg" alt="Dzień 2 w Rzymie">
+      <img src="home-day2.jpg" alt="Dzień 2">
       <div class="overlay">
         <div>
           <div class="label">Dzień 2</div>
-          <div class="sub">Watykan i zachodni brzeg Tybru</div>
+          <div class="sub">Mapa, adresy i restauracje</div>
         </div>
       </div>
     </a>
 
     <a class="card" href="day3.html">
-      <img src="rome3.jpg" alt="Dzień 3 w Rzymie">
+      <img src="home-day3.jpg" alt="Dzień 3">
       <div class="overlay">
         <div>
           <div class="label">Dzień 3</div>
-          <div class="sub">Barokowe centrum, Trastevere i wzgórza</div>
+          <div class="sub">Mapa, adresy i restauracje</div>
         </div>
       </div>
     </a>

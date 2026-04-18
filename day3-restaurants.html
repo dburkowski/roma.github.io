@@ -3,96 +3,91 @@
 <head>
   <meta charset="utf-8">
   <meta name="viewport" content="width=device-width, initial-scale=1">
-  <title>Dzień 3 — Barokowe centrum, Trastevere i wzgórza — Restauracje</title>
+  <title>Dzień 3 — Restauracje</title>
   <style>
-* { box-sizing: border-box; }
-body {
-  margin: 0;
-  font-family: Arial, sans-serif;
-  background: #f5f1eb;
-  color: #222;
-  line-height: 1.5;
-}
-.wrap {
-  max-width: 1000px;
-  margin: 0 auto;
-  padding: 32px 20px 60px;
-}
-.topnav {
-  margin-bottom: 18px;
-}
-.topnav a {
-  color: #8a1c1c;
-  text-decoration: none;
-  font-weight: bold;
-  margin-right: 18px;
-}
-.hero {
-  background: white;
-  border-radius: 18px;
-  padding: 28px;
-  box-shadow: 0 10px 24px rgba(0,0,0,0.08);
-  margin-bottom: 24px;
-}
-.hero h1 {
-  margin: 0 0 8px;
-  font-size: 36px;
-}
-.hero p {
-  margin: 6px 0;
-  color: #555;
-  font-size: 17px;
-}
-.section {
-  background: white;
-  border-radius: 18px;
-  padding: 24px;
-  box-shadow: 0 10px 24px rgba(0,0,0,0.08);
-  margin-bottom: 20px;
-}
-.section h2 {
-  margin-top: 0;
-  font-size: 28px;
-}
-.section h3 {
-  margin-bottom: 10px;
-  font-size: 20px;
-  color: #8a1c1c;
-}
-.muted {
-  color: #666;
-}
-.card-grid {
-  display: grid;
-  grid-template-columns: repeat(auto-fit, minmax(240px, 1fr));
-  gap: 16px;
-}
-.card {
-  border: 1px solid #e9dfd4;
-  border-radius: 14px;
-  padding: 16px;
-  background: #fffaf6;
-}
-.tag {
-  display: inline-block;
-  font-size: 12px;
-  background: #8a1c1c;
-  color: white;
-  border-radius: 999px;
-  padding: 5px 10px;
-  margin-bottom: 10px;
-}
-.placeholder {
-  border: 2px dashed #cdb9aa;
-  border-radius: 14px;
-  padding: 16px;
-  background: #fffaf6;
-}
-ul {
-  padding-left: 20px;
-  margin-bottom: 0;
-}
-</style>
+    * { box-sizing: border-box; }
+
+    body {
+      margin: 0;
+      font-family: Arial, sans-serif;
+      background: #f5f1eb;
+      color: #222;
+    }
+
+    .wrap {
+      max-width: 1000px;
+      margin: 0 auto;
+      padding: 32px 20px 60px;
+    }
+
+    .topnav {
+      margin-bottom: 20px;
+    }
+
+    .topnav a {
+      color: #8a1c1c;
+      text-decoration: none;
+      font-weight: bold;
+      margin-right: 18px;
+    }
+
+    .hero {
+      background: white;
+      border-radius: 18px;
+      padding: 28px;
+      box-shadow: 0 10px 24px rgba(0,0,0,0.08);
+      margin-bottom: 24px;
+      text-align: center;
+    }
+
+    .hero h1 {
+      margin: 0 0 8px;
+      font-size: 36px;
+    }
+
+    .hero p {
+      margin: 0;
+      color: #666;
+      font-size: 17px;
+    }
+
+    .list {
+      display: grid;
+      gap: 18px;
+    }
+
+    .card {
+      background: white;
+      border-radius: 18px;
+      padding: 22px;
+      box-shadow: 0 10px 24px rgba(0,0,0,0.08);
+    }
+
+    .place-title {
+      margin: 0 0 12px;
+      font-size: 24px;
+      line-height: 1.25;
+    }
+
+    .place-title a {
+      color: #222;
+      text-decoration: none;
+    }
+
+    .place-title a:hover {
+      text-decoration: underline;
+    }
+
+    .meta {
+      margin: 8px 0;
+      font-size: 16px;
+    }
+
+    .label {
+      font-weight: bold;
+      color: #8a1c1c;
+    }
+  </style>
 </head>
 <body>
   <div class="wrap">
@@ -104,53 +99,64 @@ ul {
     </div>
 
     <section class="hero">
-      <h1>Dzień 3 — Barokowe centrum, Trastevere i wzgórza</h1>
-      <p><strong>Sekcja:</strong> Restauracje</p>
-      <p><strong>Obszar dnia:</strong> Pantheon • Piazza Navona • Campo de’ Fiori • Trastevere • Gianicolo</p>
-      <p class="muted">Ta strona jest gotowym szkieletem. Tu możesz wpisywać restauracje, godziny, krótkie notatki i linki do map.</p>
+      <h1>Dzień 3 — Restauracje</h1>
+      <p>Kliknij nazwę restauracji, aby otworzyć ją w Google Maps</p>
     </section>
 
-    <section class="section">
-      <h2>Lista restauracji</h2>
-      <div class="card-grid">
-        <div class="card">
-          <div class="tag">Restauracja 1</div>
-          <h3>Nazwa miejsca</h3>
-          <p><strong>Adres:</strong> uzupełnij</p>
-          <p><strong>Kuchnia:</strong> uzupełnij</p>
-          <p><strong>Godziny:</strong> uzupełnij</p>
-          <p><strong>Notatka:</strong> np. blisko głównej trasy, dobra na lunch.</p>
-        </div>
-
-        <div class="card">
-          <div class="tag">Restauracja 2</div>
-          <h3>Nazwa miejsca</h3>
-          <p><strong>Adres:</strong> uzupełnij</p>
-          <p><strong>Kuchnia:</strong> uzupełnij</p>
-          <p><strong>Godziny:</strong> uzupełnij</p>
-          <p><strong>Notatka:</strong> np. rezerwacja zalecana.</p>
-        </div>
-
-        <div class="card">
-          <div class="tag">Restauracja 3</div>
-          <h3>Nazwa miejsca</h3>
-          <p><strong>Adres:</strong> uzupełnij</p>
-          <p><strong>Kuchnia:</strong> uzupełnij</p>
-          <p><strong>Godziny:</strong> uzupełnij</p>
-          <p><strong>Notatka:</strong> np. kolacja, widok, miejsce klimatyczne.</p>
-        </div>
+    <section class="list">
+      <div class="card">
+        <h2 class="place-title">
+          <a href="https://www.google.com/maps/search/?api=1&query=Tonnarello%2C%20Via%20della%20Paglia%201%2C%2000153%20Roma" target="_blank">
+            <strong>1. Tonnarello — ⭐ 4.5 (120 000+ opinii)</strong>
+          </a>
+        </h2>
+        <p class="meta"><span class="label">Adres:</span> Via della Paglia 1, 00153 Roma</p>
+        <p class="meta"><span class="label">Kuchnia:</span> klasyczna rzymska — carbonara, cacio e pepe, amatriciana, saltimbocca.</p>
+        <p class="meta"><span class="label">Czego się spodziewać:</span> ogromnie popularne miejsce w Trastevere; duże porcje, szybka obsługa, bardzo turystyczne, ale jedzenie solidne; często długie kolejki.</p>
       </div>
-    </section>
 
-    <section class="section">
-      <h2>Moje notatki</h2>
-      <div class="placeholder">
-        <ul>
-          <li>tu wpisz miejsca obowiązkowe</li>
-          <li>tu wpisz plan B</li>
-          <li>tu wpisz miejsca blisko konkretnego zabytku</li>
-          <li>tu wpisz własne linki lub krótkie uwagi</li>
-        </ul>
+      <div class="card">
+        <h2 class="place-title">
+          <a href="https://www.google.com/maps/search/?api=1&query=Grazia%20%26%20Graziella%2C%20Largo%20M.D.%20Fumasoni%20Biondi%205%2C%2000153%20Roma" target="_blank">
+            <strong>2. Grazia &amp; Graziella — ⭐ 4.6 (25 000+ opinii)</strong>
+          </a>
+        </h2>
+        <p class="meta"><span class="label">Adres:</span> Largo M.D. Fumasoni Biondi 5, 00153 Roma</p>
+        <p class="meta"><span class="label">Kuchnia:</span> nowoczesna interpretacja kuchni włoskiej — makarony, owoce morza, dania sezonowe.</p>
+        <p class="meta"><span class="label">Czego się spodziewać:</span> kolorowe, żywe miejsce z energią Trastevere; świetna atmosfera, dobre drinki, obsługa bardzo kontaktowa; idealne na wieczór.</p>
+      </div>
+
+      <div class="card">
+        <h2 class="place-title">
+          <a href="https://www.google.com/maps/search/?api=1&query=Nannarella%2C%20Piazza%20di%20San%20Calisto%205%2C%2000153%20Roma" target="_blank">
+            <strong>3. Nannarella — ⭐ 4.6 (70 000+ opinii)</strong>
+          </a>
+        </h2>
+        <p class="meta"><span class="label">Adres:</span> Piazza di San Calisto 5, 00153 Roma</p>
+        <p class="meta"><span class="label">Kuchnia:</span> rzymska i włoska — klasyki w dużych porcjach, świeże makarony, tiramisu.</p>
+        <p class="meta"><span class="label">Czego się spodziewać:</span> siostrzany lokal Tonnarello, równie popularny; świetna lokalizacja w sercu Trastevere; bardzo tłoczno, ale jedzenie trzyma poziom.</p>
+      </div>
+
+      <div class="card">
+        <h2 class="place-title">
+          <a href="https://www.google.com/maps/search/?api=1&query=Otello%2C%20Via%20della%20Pelliccia%2047%2F53%2C%2000153%20Roma" target="_blank">
+            <strong>4. Otello — ⭐ 4.5 (10 000+ opinii)</strong>
+          </a>
+        </h2>
+        <p class="meta"><span class="label">Adres:</span> Via della Pelliccia 47/53, 00153 Roma</p>
+        <p class="meta"><span class="label">Kuchnia:</span> tradycyjna rzymska — pasta alla gricia, amatriciana, carciofi, mięsa.</p>
+        <p class="meta"><span class="label">Czego się spodziewać:</span> klasyczna trattoria z ogródkiem; mniej turystyczna niż Tonnarello/Nannarella; dobra jakość i spokojniejszy klimat.</p>
+      </div>
+
+      <div class="card">
+        <h2 class="place-title">
+          <a href="https://www.google.com/maps/search/?api=1&query=Trattoria%20Da%20Enzo%20al%2029%2C%20Via%20dei%20Vascellari%2029%2C%2000153%20Roma" target="_blank">
+            <strong>5. Trattoria Da Enzo al 29 — ⭐ 4.6 (15 000+ opinii)</strong>
+          </a>
+        </h2>
+        <p class="meta"><span class="label">Adres:</span> Via dei Vascellari 29, 00153 Roma</p>
+        <p class="meta"><span class="label">Kuchnia:</span> autentyczna rzymska — carbonara, cacio e pepe, carciofi alla romana.</p>
+        <p class="meta"><span class="label">Czego się spodziewać:</span> jedno z najbardziej autentycznych miejsc w Trastevere; małe, rodzinne, bardzo wysokiej jakości; często kolejki, ale warto.</p>
       </div>
     </section>
   </div>

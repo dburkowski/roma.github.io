@@ -47,13 +47,11 @@
     }
 
     .card {
-      position: relative;
       display: block;
       height: 240px;
       border-radius: 18px;
       overflow: hidden;
       text-decoration: none;
-      color: white;
       box-shadow: 0 10px 24px rgba(0,0,0,0.18);
     }
 
@@ -62,25 +60,6 @@
       height: 100%;
       object-fit: cover;
       display: block;
-      filter: none;
-      opacity: 1;
-    }
-
-    .overlay {
-      position: absolute;
-      left: 24px;
-      right: 24px;
-      bottom: 24px;
-      padding: 0;
-      background: none;
-      display: block;
-    }
-
-    .label {
-      font-size: 30px;
-      font-weight: bold;
-      color: #fff;
-      text-shadow: 0 3px 10px rgba(0,0,0,0.55);
     }
   </style>
 </head>
@@ -94,23 +73,18 @@
   <section class="cards">
     <a class="card" href="day2-map.html">
       <img src="day2-link-map.jpg" alt="Mapa dnia 2">
-      <div class="overlay">
-        <div class="label">Mapa</div>
-      </div>
     </a>
 
     <a class="card" href="day2-addresses.html">
       <img src="day2-link-addresses.jpg" alt="Adresy dnia 2">
-      <div class="overlay">
-        <div class="label">Adresy</div>
-      </div>
     </a>
 
     <a class="card" href="day2-restaurants.html">
       <img src="day2-link-restaurants.jpg" alt="Restauracje dnia 2">
-      <div class="overlay">
-        <div class="label">Restauracje</div>
-      </div>
+    </a>
+
+    <a class="card" href="trains.html">
+      <img src="day2-commute.jpg" alt="Dojazd dnia 2">
     </a>
   </section>
 </body>

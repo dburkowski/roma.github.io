@@ -66,6 +66,18 @@
       filter: brightness(0.88);
     }
 
+    /* Styl dla karty tekstowej */
+    .card-text {
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      background: #ff7575; /* Akcent kolorystyczny */
+      color: white;
+      font-size: 48px;
+      font-weight: bold;
+      text-align: center;
+    }
+
     .overlay {
       position: absolute;
       left: 24px;
@@ -121,12 +133,8 @@
       </div>
     </a>
 
-    <a class="card" href="help.html">
-      <img src="IMG_3451.jpeg" alt="Pomoc">
-      <div class="overlay">
-        <div class="label">POMOC</div>
-        <div class="sub">Numery alarmowe i ważne kontakty</div>
-      </div>
+    <a class="card card-text" href="help.html">
+      POMOC
     </a>
   </section>
 </body>

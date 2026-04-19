@@ -34,16 +34,23 @@
     .hero h1 { margin: 0; font-size: 2.2rem; letter-spacing: -0.5px; }
     .hero p { color: var(--muted); margin: 5px 0 0; }
 
-    /* Lista i karty */
+    /* Lista i karty - tutaj każda karta otrzymuje czerwony akcent */
     .list { display: grid; gap: 20px; }
     .card {
       background: var(--card-bg);
       padding: 24px;
-      border-radius: 16px;
-      border: 1px solid rgba(255,255,255,0.05);
-      transition: transform 0.2s, border-color 0.2s;
+      border-radius: 12px;
+      /* Stałe, nowoczesne obramowanie */
+      border: 1px solid #2d3436; 
+      /* Stały akcent po lewej stronie dla każdej karty */
+      border-left: 5px solid var(--accent);
+      transition: all 0.3s ease;
     }
-    .card:hover { border-color: rgba(255,117,117,0.3); transform: translateY(-3px); }
+    .card:hover {
+      border-color: var(--accent);
+      box-shadow: 0 0 15px rgba(255, 117, 117, 0.15);
+      transform: translateY(-3px);
+    }
 
     .place-title { margin: 0 0 15px; font-size: 1.3rem; }
     .place-title a { color: #fff; text-decoration: none; display: block; }

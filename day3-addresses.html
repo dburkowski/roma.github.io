@@ -5,232 +5,135 @@
   <meta name="viewport" content="width=device-width, initial-scale=1">
   <title>Dzień 3 — Adresy</title>
   <style>
-    * { box-sizing: border-box; }
+    :root {
+      --bg: #0c0e12;
+      --card-bg: #16191f;
+      --accent: #ff7575;
+      --text: #e1e1e6;
+      --muted: #8892b0;
+    }
 
     body {
-      color-scheme: dark;
+      background: var(--bg);
+      color: var(--text);
+      font-family: 'Segoe UI', system-ui, sans-serif;
       margin: 0;
-      font-family: Arial, sans-serif;
-      background: #0f1115;
-      color: #f3f3f3;
-      line-height: 1.5;
+      padding: 20px;
+      line-height: 1.6;
     }
 
-    .wrap {
-      max-width: 1000px;
-      margin: 0 auto;
-      padding: 32px 20px 60px;
-    }
+    .wrap { max-width: 700px; margin: 0 auto; }
 
-    .topnav {
-      margin-bottom: 18px;
-    }
+    /* Nawigacja */
+    .topnav { display: flex; flex-wrap: wrap; gap: 15px; margin-bottom: 40px; }
+    .topnav a { color: var(--muted); text-decoration: none; font-size: 0.9rem; transition: color 0.2s; }
+    .topnav a:hover { color: var(--accent); }
 
-    .topnav a {
-      color: #ff8f8f;
-      text-decoration: none;
-      font-weight: bold;
-      margin-right: 18px;
-    }
+    /* Hero */
+    .hero { margin-bottom: 40px; border-left: 4px solid var(--accent); padding-left: 20px; }
+    .hero h1 { margin: 0; font-size: 2.2rem; letter-spacing: -0.5px; }
+    .hero p { color: var(--muted); margin: 5px 0 0; }
 
-    .hero {
-      background: #171b22;
-      border-radius: 18px;
-      padding: 28px;
-      box-shadow: 0 14px 32px rgba(0,0,0,0.45);
-      margin-bottom: 24px;
-      text-align: center;
-    }
-
-    .hero h1 {
-      margin: 0 0 8px;
-      font-size: 36px;
-    }
-
-    .hero p {
-      margin: 0;
-      color: #b8bec8;
-      font-size: 17px;
-    }
-
-    .list {
-      display: grid;
-      gap: 18px;
-    }
-
+    /* Karty */
+    .list { display: grid; gap: 20px; }
     .card {
-      background: #171b22;
-      border-radius: 18px;
-      padding: 22px;
-      box-shadow: 0 14px 32px rgba(0,0,0,0.45);
-      transition: transform 0.15s ease, box-shadow 0.15s ease;
+      background: var(--card-bg);
+      padding: 24px;
+      border-radius: 12px;
+      border: 1px solid #2d3436; 
+      border-left: 5px solid var(--accent);
+      transition: all 0.3s ease;
     }
-
     .card:hover {
-      transform: translateY(-2px);
-      box-shadow: 0 18px 36px rgba(0,0,0,0.55);
+      border-color: var(--accent);
+      box-shadow: 0 0 15px rgba(255, 117, 117, 0.15);
+      transform: translateY(-3px);
     }
 
-    .place-title {
-      margin: 0 0 12px;
-      font-size: 24px;
-      line-height: 1.25;
-    }
-
-    .place-title a {
-      color: #f3f3f3;
-      text-decoration: none;
-    }
-
-    .place-title a:hover {
-      text-decoration: underline;
-    }
-
-    .meta {
-      margin: 8px 0;
-      font-size: 16px;
-    }
-
-    .label {
-      font-weight: bold;
-      color: #ff8f8f;
-    }
-
-    .site-link {
-      color: #ff8f8f;
-      text-decoration: none;
-      font-weight: bold;
-    }
-
-    .site-link:hover {
-      text-decoration: underline;
-    }
-
-    .muted {
-      color: #b8bec8;
-    }
+    .place-title { margin: 0 0 15px; font-size: 1.3rem; }
+    .place-title a { color: #fff; text-decoration: none; display: block; }
+    
+    .meta { margin: 5px 0; font-size: 0.95rem; }
+    .label { color: var(--accent); font-weight: 600; margin-right: 8px; }
+    .site-link { color: var(--accent); text-decoration: none; border-bottom: 1px solid transparent; }
+    .site-link:hover { border-bottom-color: var(--accent); }
+    .muted { color: var(--muted); font-size: 0.9rem; }
   </style>
 </head>
 <body>
   <div class="wrap">
-    <div class="topnav">
+    <nav class="topnav">
       <a href="index.html">← Strona główna</a>
-      <a href="day3.html">Powrót do Dnia 3</a>
+      <a href="day3.html">Dzień 3</a>
       <a href="day3-map.html">Mapa</a>
       <a href="day3-restaurants.html">Restauracje</a>
-    </div>
+    </nav>
 
-    <section class="hero">
+    <header class="hero">
       <h1>Dzień 3 — Adresy</h1>
-      <p>Kliknij nazwę miejsca, aby otworzyć lokalizację w Google Maps</p>
-    </section>
+      <p>Kliknij w nazwę miejsca, aby otworzyć lokalizację</p>
+    </header>
 
     <section class="list">
-
-      <div class="card">
-        <h2 class="place-title">
-          <a href="https://www.google.com/maps/search/?api=1&query=Roma%20Termini" target="_blank">
-            <strong>1. Przyjazd do Rzymu — Stacja Roma Termini</strong>
-          </a>
-        </h2>
+      <article class="card">
+        <h2 class="place-title"><a href="https://www.google.com/maps/search/?api=1&query=Roma%20Termini" target="_blank">1. Przyjazd do Rzymu — Stacja Roma Termini</a></h2>
         <p class="meta"><span class="label">Adres:</span> Piazza dei Cinquecento, 00185 Roma</p>
-        <p class="meta"><span class="label">Opis:</span> Przyjazd pociągiem Regionale z Anzio do głównego dworca w Rzymie.</p>
-      </div>
+        <p class="meta"><span class="label">Opis:</span> Przyjazd pociągiem Regionale z Anzio do głównego dworca.</p>
+      </article>
 
-      <div class="card">
-        <h2 class="place-title">
-          <a href="https://www.google.com/maps/search/?api=1&query=Barberini%20Roma" target="_blank">
-            <strong>2. Dojazd do Panteonu — metro do stacji Barberini</strong>
-          </a>
-        </h2>
-        <p class="meta"><span class="label">Trasa:</span> Z Termini → metro A → stacja Barberini → dalej pieszo w stronę Panteonu</p>
+      <article class="card">
+        <h2 class="place-title"><a href="https://www.google.com/maps/search/?api=1&query=Barberini%20Roma" target="_blank">2. Dojazd do Panteonu</a></h2>
+        <p class="meta"><span class="label">Trasa:</span> Z Termini → metro A → stacja Barberini → spacer</p>
         <p class="meta"><span class="label">Czas:</span> ok. 2 minuty metrem + spacer</p>
-      </div>
+      </article>
 
-      <div class="card">
-        <h2 class="place-title">
-          <a href="https://www.google.com/maps/search/?api=1&query=Pantheon%2C%20Piazza%20della%20Rotonda%2C%2000186%20Roma" target="_blank">
-            <strong>3. Pantheon (Panteon)</strong>
-          </a>
-        </h2>
+      <article class="card">
+        <h2 class="place-title"><a href="https://www.google.com/maps/search/?api=1&query=Pantheon%2C%20Piazza%20della%20Rotonda%2C%2000186%20Roma" target="_blank">3. Pantheon (Panteon)</a></h2>
         <p class="meta"><span class="label">Adres:</span> Piazza della Rotonda, 00186 Roma</p>
-        <p class="meta"><span class="label">Strona:</span>
-          <a class="site-link" href="https://pantheonroma.com" target="_blank">pantheonroma.com</a>
-        </p>
-      </div>
+        <p class="meta"><span class="label">Strona:</span> <a class="site-link" href="https://pantheonroma.com" target="_blank">pantheonroma.com</a></p>
+      </article>
 
-      <div class="card">
-        <h2 class="place-title">
-          <a href="https://www.google.com/maps/search/?api=1&query=Piazza%20Navona%2C%2000186%20Roma" target="_blank">
-            <strong>4. Piazza Navona (Plac Navona)</strong>
-          </a>
-        </h2>
+      <article class="card">
+        <h2 class="place-title"><a href="https://www.google.com/maps/search/?api=1&query=Piazza%20Navona%2C%2000186%20Roma" target="_blank">4. Piazza Navona</a></h2>
         <p class="meta"><span class="label">Adres:</span> Piazza Navona, 00186 Roma</p>
         <p class="meta"><span class="label">Strona:</span> <span class="muted">brak oficjalnej</span></p>
-      </div>
+      </article>
 
-      <div class="card">
-        <h2 class="place-title">
-          <a href="https://www.google.com/maps/search/?api=1&query=Campo%20de%20Fiori%2C%20Piazza%20Campo%20de%20Fiori%2C%2000186%20Roma" target="_blank">
-            <strong>5. Campo de’ Fiori</strong>
-          </a>
-        </h2>
+      <article class="card">
+        <h2 class="place-title"><a href="https://www.google.com/maps/search/?api=1&query=Campo%20de%20Fiori%2C%20Piazza%20Campo%20de%20Fiori%2C%2000186%20Roma" target="_blank">5. Campo de’ Fiori</a></h2>
         <p class="meta"><span class="label">Adres:</span> Piazza Campo de’ Fiori, 00186 Roma</p>
         <p class="meta"><span class="label">Strona:</span> <span class="muted">brak oficjalnej</span></p>
-      </div>
+      </article>
 
-      <div class="card">
-        <h2 class="place-title">
-          <a href="https://www.google.com/maps/search/?api=1&query=Ponte%20Sisto%2C%2000153%20Roma" target="_blank">
-            <strong>6. Trastevere / Ponte Sisto</strong>
-          </a>
-        </h2>
+      <article class="card">
+        <h2 class="place-title"><a href="https://www.google.com/maps/search/?api=1&query=Ponte%20Sisto%2C%2000153%20Roma" target="_blank">6. Trastevere / Ponte Sisto</a></h2>
         <p class="meta"><span class="label">Adres:</span> Ponte Sisto, 00153 Roma</p>
         <p class="meta"><span class="label">Strona:</span> <span class="muted">brak oficjalnej</span></p>
-      </div>
+      </article>
 
-      <div class="card">
-        <h2 class="place-title">
-          <a href="https://www.google.com/maps/search/?api=1&query=Basilica%20di%20Santa%20Maria%20in%20Trastevere%2C%20Piazza%20di%20Santa%20Maria%20in%20Trastevere%2C%2000153%20Roma" target="_blank">
-            <strong>7. Bazylika Santa Maria in Trastevere</strong>
-          </a>
-        </h2>
+      <article class="card">
+        <h2 class="place-title"><a href="https://www.google.com/maps/search/?api=1&query=Basilica%20di%20Santa%20Maria%20in%20Trastevere%2C%20Piazza%20di%20Santa%20Maria%20in%20Trastevere%2C%2000153%20Roma" target="_blank">7. Bazylika Santa Maria in Trastevere</a></h2>
         <p class="meta"><span class="label">Adres:</span> Piazza di Santa Maria in Trastevere, 00153 Roma</p>
-        <p class="meta"><span class="label">Strona:</span>
-          <a class="site-link" href="https://www.basilicasantamariaintrastevere.it" target="_blank">basilicasantamariaintrastevere.it</a>
-        </p>
-      </div>
+        <p class="meta"><span class="label">Strona:</span> <a class="site-link" href="https://www.basilicasantamariaintrastevere.it" target="_blank">basilicasantamariaintrastevere.it</a></p>
+      </article>
 
-      <div class="card">
-        <h2 class="place-title">
-          <a href="https://www.google.com/maps/search/?api=1&query=Belvedere%20del%20Gianicolo%2C%20Piazzale%20Giuseppe%20Garibaldi%2C%2000165%20Roma" target="_blank">
-            <strong>8. Gianicolo (Belvedere del Gianicolo)</strong>
-          </a>
-        </h2>
+      <article class="card">
+        <h2 class="place-title"><a href="https://www.google.com/maps/search/?api=1&query=Belvedere%20del%20Gianicolo%2C%20Piazzale%20Giuseppe%20Garibaldi%2C%2000165%20Roma" target="_blank">8. Gianicolo (Belvedere del Gianicolo)</a></h2>
         <p class="meta"><span class="label">Adres:</span> Piazzale Giuseppe Garibaldi, 00165 Roma</p>
         <p class="meta"><span class="label">Strona:</span> <span class="muted">brak oficjalnej</span></p>
-      </div>
+      </article>
 
-      <div class="card">
-        <h2 class="place-title">
-          <a href="https://www.google.com/maps/search/?api=1&query=Giardino%20degli%20Aranci%2C%20Piazza%20Pietro%20d%27Illiria%2C%2000153%20Roma" target="_blank">
-            <strong>9. Ogrody Pomarańczowe (Giardino degli Aranci)</strong>
-          </a>
-        </h2>
+      <article class="card">
+        <h2 class="place-title"><a href="https://www.google.com/maps/search/?api=1&query=Giardino%20degli%20Aranci%2C%20Piazza%20Pietro%20d%27Illiria%2C%2000153%20Roma" target="_blank">9. Ogrody Pomarańczowe</a></h2>
         <p class="meta"><span class="label">Adres:</span> Piazza Pietro d’Illiria, 00153 Roma</p>
         <p class="meta"><span class="label">Strona:</span> <span class="muted">brak oficjalnej</span></p>
-      </div>
+      </article>
 
-      <div class="card">
-        <h2 class="place-title">
-          <a href="https://www.google.com/maps/search/?api=1&query=Villa%20Borghese%2C%2000197%20Roma" target="_blank">
-            <strong>10. Villa Borghese</strong>
-          </a>
-        </h2>
+      <article class="card">
+        <h2 class="place-title"><a href="https://www.google.com/maps/search/?api=1&query=Villa%20Borghese%2C%2000197%20Roma" target="_blank">10. Villa Borghese</a></h2>
         <p class="meta"><span class="label">Adres:</span> 00197 Roma</p>
         <p class="meta"><span class="label">Strona:</span> <span class="muted">brak oficjalnej</span></p>
-      </div>
-
+      </article>
     </section>
   </div>
 </body>

@@ -3,249 +3,108 @@
 <head>
   <meta charset="utf-8">
   <meta name="viewport" content="width=device-width, initial-scale=1">
-  <title>Dzień 1 — Adresy</title>
+  <title>Dzień 1 — Adresy w Rzymie</title>
   <style>
+    @import url('https://fonts.googleapis.com/css2?family=Inter:wght@400;600;700&display=swap');
+
     * { box-sizing: border-box; }
 
     body {
-      color-scheme: dark;
       margin: 0;
-      font-family: Arial, sans-serif;
-      background: #0f1115;
-      color: #f3f3f3;
-      line-height: 1.5;
+      font-family: 'Inter', sans-serif;
+      background: #0a0a0c;
+      color: #e2e8f0;
+      line-height: 1.6;
     }
 
     .wrap {
-      max-width: 1000px;
+      max-width: 800px;
       margin: 0 auto;
-      padding: 32px 20px 60px;
+      padding: 40px 20px;
     }
 
     .topnav {
-      margin-bottom: 18px;
+      display: flex;
+      gap: 20px;
+      margin-bottom: 40px;
+      font-size: 0.9rem;
     }
 
     .topnav a {
-      color: #ff8f8f;
+      color: #94a3b8;
       text-decoration: none;
-      font-weight: bold;
-      margin-right: 18px;
+      transition: color 0.3s;
     }
 
+    .topnav a:hover { color: #f87171; }
+
     .hero {
-      background: #171b22;
-      border-radius: 18px;
-      padding: 28px;
-      box-shadow: 0 14px 32px rgba(0,0,0,0.45);
-      margin-bottom: 24px;
       text-align: center;
+      margin-bottom: 50px;
     }
 
     .hero h1 {
-      margin: 0 0 8px;
-      font-size: 36px;
+      font-size: 2.5rem;
+      margin: 0 0 10px;
+      background: linear-gradient(to right, #f87171, #fb923c);
+      -webkit-background-clip: text;
+      -webkit-text-fill-color: transparent;
     }
 
-    .hero p {
-      margin: 0;
-      color: #b8bec8;
-      font-size: 17px;
-    }
-
-    .list {
-      display: grid;
-      gap: 18px;
-    }
+    .list { display: grid; gap: 20px; }
 
     .card {
-      background: #171b22;
-      border-radius: 18px;
-      padding: 22px;
-      box-shadow: 0 14px 32px rgba(0,0,0,0.45);
-      transition: transform 0.15s ease, box-shadow 0.15s ease;
+      background: rgba(23, 27, 34, 0.6);
+      border: 1px solid rgba(255, 255, 255, 0.05);
+      border-radius: 20px;
+      padding: 24px;
+      backdrop-filter: blur(10px);
+      transition: all 0.3s ease;
     }
 
     .card:hover {
-      transform: translateY(-2px);
-      box-shadow: 0 18px 36px rgba(0,0,0,0.55);
+      border-color: rgba(248, 113, 113, 0.3);
+      transform: translateY(-5px);
+      box-shadow: 0 20px 25px -5px rgba(0,0,0,0.3);
     }
 
-    .place-title {
-      margin: 0 0 12px;
-      font-size: 24px;
-      line-height: 1.25;
+    .place-title { margin: 0 0 15px; font-size: 1.25rem; }
+    .place-title a { color: #fff; text-decoration: none; display: flex; align-items: center; }
+    
+    .meta { margin: 6px 0; font-size: 0.95rem; display: flex; align-items: flex-start; }
+    .label { 
+      font-weight: 600; 
+      color: #f87171; 
+      min-width: 90px;
+      display: inline-block;
     }
 
-    .place-title a {
-      color: #f3f3f3;
-      text-decoration: none;
-    }
-
-    .place-title a:hover {
-      text-decoration: underline;
-    }
-
-    .meta {
-      margin: 8px 0;
-      font-size: 16px;
-    }
-
-    .label {
-      font-weight: bold;
-      color: #ff8f8f;
-    }
-
-    .site-link {
-      color: #ff8f8f;
-      text-decoration: none;
-      font-weight: bold;
-    }
-
-    .site-link:hover {
-      text-decoration: underline;
-    }
-
-    .muted {
-      color: #b8bec8;
-    }
+    .site-link { color: #fb923c; text-decoration: none; font-weight: 600; }
+    .muted { color: #64748b; font-style: italic; }
   </style>
 </head>
 <body>
   <div class="wrap">
-    <div class="topnav">
-      <a href="index.html">← Strona główna</a>
-      <a href="day1.html">Powrót do Dnia 1</a>
-      <a href="day1-map.html">Mapa</a>
-      <a href="day1-restaurants.html">Restauracje</a>
-    </div>
+    <nav class="topnav">
+      <a href="index.html">← Powrót</a>
+      <a href="day1.html">Dzień 1</a>
+    </nav>
 
-    <section class="hero">
-      <h1>Dzień 1 — Adresy</h1>
-      <p>Kliknij nazwę miejsca, aby otworzyć lokalizację w Google Maps</p>
-    </section>
+    <header class="hero">
+      <h1>Rzymski Plan</h1>
+      <p>Kliknij w miejsce, aby otworzyć je na Mapach Google</p>
+    </header>
 
     <section class="list">
-
-      <div class="card">
+      <article class="card">
         <h2 class="place-title">
-          <a href="https://www.google.com/maps/search/?api=1&query=Roma%20Termini" target="_blank">
-            <strong>1. Przyjazd do Rzymu — Stacja Roma Termini</strong>
-          </a>
+          <a href="#">1. Stacja Roma Termini</a>
         </h2>
-        <p class="meta"><span class="label">Adres:</span> Piazza dei Cinquecento, 00185 Roma</p>
-        <p class="meta"><span class="label">Opis:</span> Przyjazd pociągiem Regionale z Anzio do głównego dworca w Rzymie.</p>
-      </div>
-
-      <div class="card">
-        <h2 class="place-title">
-          <a href="https://www.google.com/maps/search/?api=1&query=Metro%20Colosseo%20Roma" target="_blank">
-            <strong>2. Dojazd do Koloseum — Metro B (Colosseo)</strong>
-          </a>
-        </h2>
-        <p class="meta"><span class="label">Trasa:</span> Metro B z Termini → kierunek Laurentina → stacja Colosseo</p>
-        <p class="meta"><span class="label">Czas:</span> ok. 2 minuty</p>
-      </div>
-
-      <div class="card">
-        <h2 class="place-title">
-          <a href="https://www.google.com/maps/search/?api=1&query=Colosseo%2C%20Piazza%20del%20Colosseo%201%2C%2000184%20Roma" target="_blank">
-            <strong>3. Koloseum (Colosseo)</strong>
-          </a>
-        </h2>
-        <p class="meta"><span class="label">Adres:</span> Piazza del Colosseo 1, 00184 Roma</p>
-        <p class="meta"><span class="label">Bilety / strona:</span>
-          <a class="site-link" href="https://colosseo.it" target="_blank">colosseo.it</a>
-        </p>
-      </div>
-
-      <div class="card">
-        <h2 class="place-title">
-          <a href="https://www.google.com/maps/search/?api=1&query=Foro%20Romano%2C%20Via%20della%20Salara%20Vecchia%205%2F6%2C%2000186%20Roma" target="_blank">
-            <strong>4. Forum Romanum (Foro Romano)</strong>
-          </a>
-        </h2>
-        <p class="meta"><span class="label">Adres:</span> Via della Salara Vecchia 5/6, 00186 Roma</p>
-        <p class="meta"><span class="label">Bilety / strona:</span>
-          <a class="site-link" href="https://parcocolosseo.it" target="_blank">parcocolosseo.it</a>
-        </p>
-      </div>
-
-      <div class="card">
-        <h2 class="place-title">
-          <a href="https://www.google.com/maps/search/?api=1&query=Palatino%2C%20Via%20di%20San%20Gregorio%2030%2C%2000184%20Roma" target="_blank">
-            <strong>5. Palatyn (Palatino)</strong>
-          </a>
-        </h2>
-        <p class="meta"><span class="label">Adres:</span> Via di San Gregorio 30, 00184 Roma</p>
-        <p class="meta"><span class="label">Bilety / strona:</span>
-          <a class="site-link" href="https://parcocolosseo.it" target="_blank">parcocolosseo.it</a>
-        </p>
-      </div>
-
-      <div class="card">
-        <h2 class="place-title">
-          <a href="https://www.google.com/maps/search/?api=1&query=Arco%20di%20Costantino%2C%20Via%20di%20San%20Gregorio%2C%2000186%20Roma" target="_blank">
-            <strong>6. Łuk Konstantyna (Arco di Costantino)</strong>
-          </a>
-        </h2>
-        <p class="meta"><span class="label">Adres:</span> Via di San Gregorio, 00186 Roma</p>
-        <p class="meta"><span class="label">Bilety / strona:</span> <span class="muted">brak oficjalnej strony / obiekt zewnętrzny</span></p>
-      </div>
-
-      <div class="card">
-        <h2 class="place-title">
-          <a href="https://www.google.com/maps/search/?api=1&query=Piazza%20Venezia%2C%2000186%20Roma" target="_blank">
-            <strong>7. Plac Wenecki (Piazza Venezia) + Vittoriano</strong>
-          </a>
-        </h2>
-        <p class="meta"><span class="label">Adres:</span> Piazza Venezia, 00186 Roma</p>
-        <p class="meta"><span class="label">Bilety / strona:</span>
-          <a class="site-link" href="https://vive.cultura.gov.it" target="_blank">vive.cultura.gov.it</a>
-        </p>
-      </div>
-
-      <div class="card">
-        <h2 class="place-title">
-          <a href="https://www.google.com/maps/search/?api=1&query=Fontana%20di%20Trevi%2C%20Piazza%20di%20Trevi%2C%2000187%20Roma" target="_blank">
-            <strong>8. Fontanna di Trevi (Fontana di Trevi)</strong>
-          </a>
-        </h2>
-        <p class="meta"><span class="label">Adres:</span> Piazza di Trevi, 00187 Roma</p>
-        <p class="meta"><span class="label">Bilety / strona:</span> <span class="muted">brak oficjalnej strony / miejsce publiczne</span></p>
-      </div>
-
-      <div class="card">
-        <h2 class="place-title">
-          <a href="https://www.google.com/maps/search/?api=1&query=Piazza%20di%20Spagna%2C%2000187%20Roma" target="_blank">
-            <strong>9. Plac Hiszpański (Piazza di Spagna)</strong>
-          </a>
-        </h2>
-        <p class="meta"><span class="label">Adres:</span> Piazza di Spagna, 00187 Roma</p>
-        <p class="meta"><span class="label">Bilety / strona:</span> <span class="muted">brak oficjalnej strony / plac publiczny</span></p>
-      </div>
-
-      <div class="card">
-        <h2 class="place-title">
-          <a href="https://www.google.com/maps/search/?api=1&query=Scalinata%20di%20Trinit%C3%A0%20dei%20Monti%2C%20Piazza%20di%20Spagna%2C%2000187%20Roma" target="_blank">
-            <strong>10. Hiszpańskie Schody (Scalinata di Trinità dei Monti)</strong>
-          </a>
-        </h2>
-        <p class="meta"><span class="label">Adres:</span> Piazza di Spagna, 00187 Roma</p>
-        <p class="meta"><span class="label">Bilety / strona:</span> <span class="muted">brak oficjalnej strony / miejsce publiczne</span></p>
-      </div>
-
-      <div class="card">
-        <h2 class="place-title">
-          <a href="https://www.google.com/maps/search/?api=1&query=Metro%20Spagna%20Roma" target="_blank">
-            <strong>11. Powrót do Anzio — Metro A → Termini → pociąg Regionale</strong>
-          </a>
-        </h2>
-        <p class="meta"><span class="label">Trasa:</span> Metro A ze stacji Spagna → Termini → pociąg Regionale do Anzio</p>
-        <p class="meta"><span class="label">Czas:</span> ok. 1h 25 min łącznie</p>
-      </div>
-
-    </section>
+        <div class="meta"><span class="label">Adres:</span> <span>Piazza dei Cinquecento, 00185 Roma</span></div>
+        <div class="meta"><span class="label">Opis:</span> <span>Przyjazd pociągiem z Anzio.</span></div>
+      </article>
+      
+      </section>
   </div>
 </body>
 </html>

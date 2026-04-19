@@ -5,227 +5,130 @@
   <meta name="viewport" content="width=device-width, initial-scale=1">
   <title>Dzień 2 — Adresy</title>
   <style>
-    * { box-sizing: border-box; }
+    :root {
+      --bg: #0c0e12;
+      --card-bg: #16191f;
+      --accent: #ff7575;
+      --text: #e1e1e6;
+      --muted: #8892b0;
+    }
 
     body {
-      color-scheme: dark;
+      background: var(--bg);
+      color: var(--text);
+      font-family: 'Segoe UI', system-ui, sans-serif;
       margin: 0;
-      font-family: Arial, sans-serif;
-      background: #0f1115;
-      color: #f3f3f3;
-      line-height: 1.5;
+      padding: 20px;
+      line-height: 1.6;
     }
 
-    .wrap {
-      max-width: 1000px;
-      margin: 0 auto;
-      padding: 32px 20px 60px;
-    }
+    .wrap { max-width: 700px; margin: 0 auto; }
 
-    .topnav {
-      margin-bottom: 18px;
-    }
+    /* Nawigacja */
+    .topnav { display: flex; flex-wrap: wrap; gap: 15px; margin-bottom: 40px; }
+    .topnav a { color: var(--muted); text-decoration: none; font-size: 0.9rem; transition: color 0.2s; }
+    .topnav a:hover { color: var(--accent); }
 
-    .topnav a {
-      color: #ff8f8f;
-      text-decoration: none;
-      font-weight: bold;
-      margin-right: 18px;
-    }
+    /* Hero */
+    .hero { margin-bottom: 40px; border-left: 4px solid var(--accent); padding-left: 20px; }
+    .hero h1 { margin: 0; font-size: 2.2rem; letter-spacing: -0.5px; }
+    .hero p { color: var(--muted); margin: 5px 0 0; }
 
-    .hero {
-      background: #171b22;
-      border-radius: 18px;
-      padding: 28px;
-      box-shadow: 0 14px 32px rgba(0,0,0,0.45);
-      margin-bottom: 24px;
-      text-align: center;
-    }
-
-    .hero h1 {
-      margin: 0 0 8px;
-      font-size: 36px;
-    }
-
-    .hero p {
-      margin: 0;
-      color: #b8bec8;
-      font-size: 17px;
-    }
-
-    .list {
-      display: grid;
-      gap: 18px;
-    }
-
+    /* Karty */
+    .list { display: grid; gap: 20px; }
     .card {
-      background: #171b22;
-      border-radius: 18px;
-      padding: 22px;
-      box-shadow: 0 14px 32px rgba(0,0,0,0.45);
-      transition: transform 0.15s ease, box-shadow 0.15s ease;
+      background: var(--card-bg);
+      padding: 24px;
+      border-radius: 12px;
+      border: 1px solid #2d3436; 
+      border-left: 5px solid var(--accent);
+      transition: all 0.3s ease;
     }
-
     .card:hover {
-      transform: translateY(-2px);
-      box-shadow: 0 18px 36px rgba(0,0,0,0.55);
+      border-color: var(--accent);
+      box-shadow: 0 0 15px rgba(255, 117, 117, 0.15);
+      transform: translateY(-3px);
     }
 
-    .place-title {
-      margin: 0 0 12px;
-      font-size: 24px;
-      line-height: 1.25;
-    }
-
-    .place-title a {
-      color: #f3f3f3;
-      text-decoration: none;
-    }
-
-    .place-title a:hover {
-      text-decoration: underline;
-    }
-
-    .meta {
-      margin: 8px 0;
-      font-size: 16px;
-    }
-
-    .label {
-      font-weight: bold;
-      color: #ff8f8f;
-    }
-
-    .site-link {
-      color: #ff8f8f;
-      text-decoration: none;
-      font-weight: bold;
-    }
-
-    .site-link:hover {
-      text-decoration: underline;
-    }
-
-    .muted {
-      color: #b8bec8;
-    }
+    .place-title { margin: 0 0 15px; font-size: 1.3rem; }
+    .place-title a { color: #fff; text-decoration: none; display: block; }
+    
+    .meta { margin: 5px 0; font-size: 0.95rem; }
+    .label { color: var(--accent); font-weight: 600; margin-right: 8px; }
+    .site-link { color: var(--accent); text-decoration: none; border-bottom: 1px solid transparent; }
+    .site-link:hover { border-bottom-color: var(--accent); }
+    .muted { color: var(--muted); font-size: 0.9rem; }
   </style>
 </head>
 <body>
   <div class="wrap">
-    <div class="topnav">
+    <nav class="topnav">
       <a href="index.html">← Strona główna</a>
-      <a href="day2.html">Powrót do Dnia 2</a>
+      <a href="day2.html">Dzień 2</a>
       <a href="day2-map.html">Mapa</a>
       <a href="day2-restaurants.html">Restauracje</a>
-    </div>
+    </nav>
 
-    <section class="hero">
+    <header class="hero">
       <h1>Dzień 2 — Adresy</h1>
-      <p>Kliknij nazwę miejsca, aby otworzyć lokalizację w Google Maps</p>
-    </section>
+      <p>Kliknij w nazwę miejsca, aby otworzyć lokalizację</p>
+    </header>
 
     <section class="list">
-
-      <div class="card">
-        <h2 class="place-title">
-          <a href="https://www.google.com/maps/search/?api=1&query=Roma%20San%20Pietro" target="_blank">
-            <strong>1. Przyjazd do Rzymu — Stacja Roma San Pietro</strong>
-          </a>
-        </h2>
+      <article class="card">
+        <h2 class="place-title"><a href="https://www.google.com/maps/search/?api=1&query=Roma%20San%20Pietro" target="_blank">1. Przyjazd do Rzymu — Stacja Roma San Pietro</a></h2>
         <p class="meta"><span class="label">Adres:</span> Piazza della Stazione di San Pietro, 00165 Roma</p>
         <p class="meta"><span class="label">Opis:</span> Przyjazd pociągiem Regionale z Anzio z przesiadką na Termini.</p>
-      </div>
+      </article>
 
-      <div class="card">
-        <h2 class="place-title">
-          <a href="https://www.google.com/maps/search/?api=1&query=Basilica%20di%20San%20Pietro" target="_blank">
-            <strong>2. Dojście do Bazyliki Św. Piotra — spacer 15–17 min</strong>
-          </a>
-        </h2>
+      <article class="card">
+        <h2 class="place-title"><a href="https://www.google.com/maps/search/?api=1&query=Basilica%20di%20San%20Pietro" target="_blank">2. Dojście do Bazyliki Św. Piotra</a></h2>
         <p class="meta"><span class="label">Trasa:</span> Via della Stazione di San Pietro → Via di Porta Cavalleggeri → Plac Św. Piotra</p>
         <p class="meta"><span class="label">Czas:</span> ok. 15–17 minut pieszo</p>
-      </div>
+      </article>
 
-      <div class="card">
-        <h2 class="place-title">
-          <a href="https://www.google.com/maps/search/?api=1&query=Basilica%20di%20San%20Pietro%2C%20Piazza%20San%20Pietro%2C%2000120%20Citt%C3%A0%20del%20Vaticano" target="_blank">
-            <strong>3. Bazylika Św. Piotra (Basilica di San Pietro)</strong>
-          </a>
-        </h2>
+      <article class="card">
+        <h2 class="place-title"><a href="https://www.google.com/maps/search/?api=1&query=Basilica%20di%20San%20Pietro%2C%20Piazza%20San%20Pietro%2C%2000120%20Citt%C3%A0%20del%20Vaticano" target="_blank">3. Bazylika Św. Piotra</a></h2>
         <p class="meta"><span class="label">Adres:</span> Piazza San Pietro, 00120 Città del Vaticano</p>
-        <p class="meta"><span class="label">Strona:</span>
-          <a class="site-link" href="https://www.vatican.va" target="_blank">vatican.va</a>
-        </p>
-      </div>
+        <p class="meta"><span class="label">Strona:</span> <a class="site-link" href="https://www.vatican.va" target="_blank">vatican.va</a></p>
+      </article>
 
-      <div class="card">
-        <h2 class="place-title">
-          <a href="https://www.google.com/maps/search/?api=1&query=Piazza%20San%20Pietro%2C%2000120%20Citt%C3%A0%20del%20Vaticano" target="_blank">
-            <strong>4. Plac Św. Piotra (Piazza di San Pietro)</strong>
-          </a>
-        </h2>
+      <article class="card">
+        <h2 class="place-title"><a href="https://www.google.com/maps/search/?api=1&query=Piazza%20San%20Pietro%2C%2000120%20Citt%C3%A0%20del%20Vaticano" target="_blank">4. Plac Św. Piotra</a></h2>
         <p class="meta"><span class="label">Adres:</span> Piazza San Pietro, 00120 Città del Vaticano</p>
         <p class="meta"><span class="label">Strona:</span> <span class="muted">brak oficjalnej</span></p>
-      </div>
+      </article>
 
-      <div class="card">
-        <h2 class="place-title">
-          <a href="https://www.google.com/maps/search/?api=1&query=Musei%20Vaticani%2C%20Viale%20Vaticano%2C%2000165%20Roma" target="_blank">
-            <strong>5. Muzea Watykańskie (Musei Vaticani)</strong>
-          </a>
-        </h2>
+      <article class="card">
+        <h2 class="place-title"><a href="https://www.google.com/maps/search/?api=1&query=Musei%20Vaticani%2C%20Viale%20Vaticano%2C%2000165%20Roma" target="_blank">5. Muzea Watykańskie</a></h2>
         <p class="meta"><span class="label">Adres:</span> Viale Vaticano, 00165 Roma</p>
-        <p class="meta"><span class="label">Strona:</span>
-          <a class="site-link" href="https://museivaticani.va" target="_blank">museivaticani.va</a>
-        </p>
-      </div>
+        <p class="meta"><span class="label">Strona:</span> <a class="site-link" href="https://museivaticani.va" target="_blank">museivaticani.va</a></p>
+      </article>
 
-      <div class="card">
-        <h2 class="place-title">
-          <a href="https://www.google.com/maps/search/?api=1&query=Cappella%20Sistina%2C%20Viale%20Vaticano%2C%2000165%20Roma" target="_blank">
-            <strong>6. Kaplica Sykstyńska (Cappella Sistina)</strong>
-          </a>
-        </h2>
+      <article class="card">
+        <h2 class="place-title"><a href="https://www.google.com/maps/search/?api=1&query=Cappella%20Sistina%2C%20Viale%20Vaticano%2C%2000165%20Roma" target="_blank">6. Kaplica Sykstyńska</a></h2>
         <p class="meta"><span class="label">Adres:</span> Viale Vaticano, 00165 Roma</p>
-        <p class="meta"><span class="label">Strona:</span>
-          <a class="site-link" href="https://museivaticani.va" target="_blank">museivaticani.va</a>
-        </p>
-        <p class="meta"><span class="label">Uwaga:</span> wejście przez Muzea Watykańskie — brak osobnego wejścia</p>
-      </div>
+        <p class="meta"><span class="label">Strona:</span> <a class="site-link" href="https://museivaticani.va" target="_blank">museivaticani.va</a></p>
+        <p class="meta"><span class="label">Uwaga:</span> wejście przez Muzea Watykańskie</p>
+      </article>
 
-      <div class="card">
-        <h2 class="place-title">
-          <a href="https://www.google.com/maps/search/?api=1&query=Castel%20Sant%27Angelo%2C%20Lungotevere%20Castello%2050%2C%2000193%20Roma" target="_blank">
-            <strong>7. Zamek Świętego Anioła (Castel Sant’Angelo)</strong>
-          </a>
-        </h2>
+      <article class="card">
+        <h2 class="place-title"><a href="https://www.google.com/maps/search/?api=1&query=Castel%20Sant%27Angelo%2C%20Lungotevere%20Castello%2050%2C%2000193%20Roma" target="_blank">7. Zamek Świętego Anioła</a></h2>
         <p class="meta"><span class="label">Adres:</span> Lungotevere Castello 50, 00193 Roma</p>
-        <p class="meta"><span class="label">Strona:</span>
-          <a class="site-link" href="https://castelsantangelo.beniculturali.it" target="_blank">castelsantangelo.beniculturali.it</a>
-        </p>
-      </div>
+        <p class="meta"><span class="label">Strona:</span> <a class="site-link" href="https://castelsantangelo.beniculturali.it" target="_blank">castelsantangelo.beniculturali.it</a></p>
+      </article>
 
-      <div class="card">
-        <h2 class="place-title">
-          <a href="https://www.google.com/maps/search/?api=1&query=Lungotevere%20Tor%20di%20Nona%20Roma" target="_blank">
-            <strong>8. Spacer nad Tybrem (Lungotevere)</strong>
-          </a>
-        </h2>
+      <article class="card">
+        <h2 class="place-title"><a href="https://www.google.com/maps/search/?api=1&query=Lungotevere%20Tor%20di%20Nona%20Roma" target="_blank">8. Spacer nad Tybrem</a></h2>
         <p class="meta"><span class="label">Adres:</span> Lungotevere Tor di Nona / Lungotevere Castello</p>
         <p class="meta"><span class="label">Strona:</span> <span class="muted">brak oficjalnej</span></p>
-      </div>
+      </article>
 
-      <div class="card">
-        <h2 class="place-title">
-          <a href="https://www.google.com/maps/search/?api=1&query=Metro%20Lepanto%20Roma" target="_blank">
-            <strong>9. Powrót do Anzio — Lepanto (A) → Termini → pociąg Regionale</strong>
-          </a>
-        </h2>
-        <p class="meta"><span class="label">Trasa:</span> Spacer do Lepanto → Metro A do Termini → pociąg Regionale do Anzio</p>
+      <article class="card">
+        <h2 class="place-title"><a href="https://www.google.com/maps/search/?api=1&query=Metro%20Lepanto%20Roma" target="_blank">9. Powrót do Anzio</a></h2>
+        <p class="meta"><span class="label">Trasa:</span> Spacer do Lepanto → Metro A do Termini → pociąg Regionale</p>
         <p class="meta"><span class="label">Czas:</span> ok. 1h 35 min łącznie</p>
-      </div>
-
+      </article>
     </section>
   </div>
 </body>

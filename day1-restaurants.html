@@ -5,160 +5,107 @@
   <meta name="viewport" content="width=device-width, initial-scale=1">
   <title>Dzień 1 — Restauracje</title>
   <style>
-    * { box-sizing: border-box; }
+    :root {
+      --bg: #0c0e12;
+      --card-bg: #16191f;
+      --accent: #ff7575;
+      --text: #e1e1e6;
+      --muted: #8892b0;
+    }
 
     body {
-      color-scheme: dark;
+      background: var(--bg);
+      color: var(--text);
+      font-family: 'Segoe UI', system-ui, sans-serif;
       margin: 0;
-      font-family: Arial, sans-serif;
-      background: #0f1115;
-      color: #f3f3f3;
+      padding: 20px;
+      line-height: 1.6;
     }
 
-    .wrap {
-      max-width: 1000px;
-      margin: 0 auto;
-      padding: 32px 20px 60px;
-    }
+    .wrap { max-width: 700px; margin: 0 auto; }
 
-    .topnav {
-      margin-bottom: 20px;
-    }
+    /* Nawigacja */
+    .topnav { display: flex; flex-wrap: wrap; gap: 15px; margin-bottom: 40px; }
+    .topnav a { color: var(--muted); text-decoration: none; font-size: 0.9rem; transition: color 0.2s; }
+    .topnav a:hover { color: var(--accent); }
 
-    .topnav a {
-      color: #ff8f8f;
-      text-decoration: none;
-      font-weight: bold;
-      margin-right: 18px;
-    }
+    /* Hero */
+    .hero { margin-bottom: 40px; border-left: 4px solid var(--accent); padding-left: 20px; }
+    .hero h1 { margin: 0; font-size: 2.2rem; letter-spacing: -0.5px; }
+    .hero p { color: var(--muted); margin: 5px 0 0; }
 
-    .hero {
-      background: #171b22;
-      border-radius: 18px;
-      padding: 28px;
-      box-shadow: 0 14px 32px rgba(0,0,0,0.45);
-      margin-bottom: 24px;
-      text-align: center;
-    }
-
-    .hero h1 {
-      margin: 0 0 8px;
-      font-size: 36px;
-    }
-
-    .hero p {
-      margin: 0;
-      color: #b8bec8;
-      font-size: 17px;
-    }
-
-    .list {
-      display: grid;
-      gap: 18px;
-    }
-
+    /* Karty */
+    .list { display: grid; gap: 20px; }
     .card {
-      background: #171b22;
-      border-radius: 18px;
-      padding: 22px;
-      box-shadow: 0 14px 32px rgba(0,0,0,0.45);
+      background: var(--card-bg);
+      padding: 24px;
+      border-radius: 12px;
+      border: 1px solid #2d3436; 
+      border-left: 5px solid var(--accent);
+      transition: all 0.3s ease;
+    }
+    .card:hover {
+      border-color: var(--accent);
+      box-shadow: 0 0 15px rgba(255, 117, 117, 0.15);
+      transform: translateY(-3px);
     }
 
-    .place-title {
-      margin: 0 0 12px;
-      font-size: 24px;
-      line-height: 1.25;
-    }
-
-    .place-title a {
-      color: #f3f3f3;
-      text-decoration: none;
-    }
-
-    .place-title a:hover {
-      text-decoration: underline;
-    }
-
-    .meta {
-      margin: 8px 0;
-      font-size: 16px;
-    }
-
-    .label {
-      font-weight: bold;
-      color: #ff8f8f;
-    }
+    .place-title { margin: 0 0 15px; font-size: 1.3rem; }
+    .place-title a { color: #fff; text-decoration: none; display: block; }
+    
+    .meta { margin: 5px 0; font-size: 0.95rem; }
+    .label { color: var(--accent); font-weight: 600; margin-right: 8px; }
   </style>
 </head>
 <body>
   <div class="wrap">
-    <div class="topnav">
+    <nav class="topnav">
       <a href="index.html">← Strona główna</a>
-      <a href="day1.html">Powrót do Dnia 1</a>
+      <a href="day1.html">Dzień 1</a>
       <a href="day1-map.html">Mapa</a>
       <a href="day1-addresses.html">Adresy</a>
-    </div>
+    </nav>
 
-    <section class="hero">
+    <header class="hero">
       <h1>Dzień 1 — Restauracje</h1>
-      <p>Kliknij nazwę restauracji, aby otworzyć ją w Google Maps</p>
-    </section>
+      <p>Kliknij nazwę restauracji, aby otworzyć lokalizację</p>
+    </header>
 
     <section class="list">
-      <div class="card">
-        <h2 class="place-title">
-          <a href="https://www.google.com/maps/search/?api=1&query=Il%20Buchetto%20Roma" target="_blank">
-            <strong>1. Il Buchetto</strong>
-          </a>
-        </h2>
+      <article class="card">
+        <h2 class="place-title"><a href="https://www.google.com/maps/search/?api=1&query=Il%20Buchetto%20Roma" target="_blank">1. Il Buchetto</a></h2>
         <p class="meta"><span class="label">Adres:</span> okolice Termini</p>
         <p class="meta"><span class="label">Kuchnia:</span> proste, lokalne jedzenie</p>
-        <p class="meta"><span class="label">Czego się spodziewać:</span> dobre na start lub koniec dnia; idealne przed wejściem do Koloseum.</p>
-      </div>
+        <p class="meta"><span class="label">Opis:</span> Dobre na start lub koniec dnia; idealne przed wejściem do Koloseum.</p>
+      </article>
 
-      <div class="card">
-        <h2 class="place-title">
-          <a href="https://www.google.com/maps/search/?api=1&query=Ristorante%20Agrodolce%20Roma%2C%20Via%20dei%20Crociferi%2025%2C%2000187%20Roma" target="_blank">
-            <strong>2. Ristorante Agrodolce Roma</strong>
-          </a>
-        </h2>
+      <article class="card">
+        <h2 class="place-title"><a href="https://www.google.com/maps/search/?api=1&query=Ristorante%20Agrodolce%20Roma%2C%20Via%20dei%20Crociferi%2025%2C%2000187%20Roma" target="_blank">2. Ristorante Agrodolce Roma</a></h2>
         <p class="meta"><span class="label">Adres:</span> Via dei Crociferi 25, 00187 Roma</p>
         <p class="meta"><span class="label">Kuchnia:</span> kuchnia rzymska, świetna carbonara</p>
-        <p class="meta"><span class="label">Czego się spodziewać:</span> przy Fontannie di Trevi — idealne po zwiedzaniu centrum, bardzo blisko głównej trasy.</p>
-      </div>
+        <p class="meta"><span class="label">Opis:</span> Przy Fontannie di Trevi — idealne po zwiedzaniu centrum.</p>
+      </article>
 
-      <div class="card">
-        <h2 class="place-title">
-          <a href="https://www.google.com/maps/search/?api=1&query=Old%20Bear%2C%20Via%20dei%20Gigli%20d%27Oro%203%2C%2000186%20Roma" target="_blank">
-            <strong>3. Old Bear</strong>
-          </a>
-        </h2>
+      <article class="card">
+        <h2 class="place-title"><a href="https://www.google.com/maps/search/?api=1&query=Old%20Bear%2C%20Via%20dei%20Gigli%20d%27Oro%203%2C%2000186%20Roma" target="_blank">3. Old Bear</a></h2>
         <p class="meta"><span class="label">Adres:</span> Via dei Gigli d’Oro 3, 00186 Roma</p>
         <p class="meta"><span class="label">Kuchnia:</span> włoska z lekkim twistem</p>
-        <p class="meta"><span class="label">Czego się spodziewać:</span> okolice Panteonu — 10 min od Trevi. Idealne na kolację po intensywnym dniu.</p>
-      </div>
+        <p class="meta"><span class="label">Opis:</span> Okolice Panteonu — 10 min od Trevi. Idealne na kolację po intensywnym dniu.</p>
+      </article>
 
-      <div class="card">
-        <h2 class="place-title">
-          <a href="https://www.google.com/maps/search/?api=1&query=Colline%20Emiliane%2C%20Via%20degli%20Avignonesi%2022%2C%2000187%20Roma" target="_blank">
-            <strong>4. Colline Emiliane</strong>
-          </a>
-        </h2>
+      <article class="card">
+        <h2 class="place-title"><a href="https://www.google.com/maps/search/?api=1&query=Colline%20Emiliane%2C%20Via%20degli%20Avignonesi%2022%2C%2000187%20Roma" target="_blank">4. Colline Emiliane</a></h2>
         <p class="meta"><span class="label">Adres:</span> Via degli Avignonesi 22, 00187 Roma</p>
         <p class="meta"><span class="label">Kuchnia:</span> emiliańska, świeże makarony</p>
-        <p class="meta"><span class="label">Czego się spodziewać:</span> blisko Piazza Barberini / Trevi. Jedna z najlepszych restauracji kuchni emiliańskiej w Rzymie.</p>
-      </div>
+        <p class="meta"><span class="label">Opis:</span> Blisko Piazza Barberini / Trevi. Jedna z najlepszych restauracji w Rzymie.</p>
+      </article>
 
-      <div class="card">
-        <h2 class="place-title">
-          <a href="https://www.google.com/maps/search/?api=1&query=Il%20Segreto%20Roma%20Piazza%20di%20Spagna" target="_blank">
-            <strong>5. Il Segreto</strong>
-          </a>
-        </h2>
+      <article class="card">
+        <h2 class="place-title"><a href="https://www.google.com/maps/search/?api=1&query=Il%20Segreto%20Roma%20Piazza%20di%20Spagna" target="_blank">5. Il Segreto</a></h2>
         <p class="meta"><span class="label">Adres:</span> w pobliżu Piazza di Spagna</p>
         <p class="meta"><span class="label">Kuchnia:</span> do uzupełnienia</p>
-        <p class="meta"><span class="label">Czego się spodziewać:</span> świetne miejsce na zakończenie dnia przy Schodach Hiszpańskich.</p>
-      </div>
+        <p class="meta"><span class="label">Opis:</span> Świetne miejsce na zakończenie dnia przy Schodach Hiszpańskich.</p>
+      </article>
     </section>
   </div>
 </body>

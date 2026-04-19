@@ -5,147 +5,90 @@
   <meta name="viewport" content="width=device-width, initial-scale=1">
   <title>Dzień 3 – Bilety</title>
   <style>
-    * { box-sizing: border-box; }
+    :root {
+      --bg: #0c0e12;
+      --card-bg: #16191f;
+      --accent: #ff7575;
+      --text: #e1e1e6;
+      --muted: #8892b0;
+    }
 
     body {
-      color-scheme: dark;
+      background: var(--bg);
+      color: var(--text);
+      font-family: 'Segoe UI', system-ui, sans-serif;
       margin: 0;
-      font-family: Arial, sans-serif;
-      background: #0f1115;
-      color: #f3f3f3;
+      padding: 20px;
       line-height: 1.6;
     }
 
-    .hero {
-      text-align: center;
-      padding: 40px 20px 20px;
-    }
+    .wrap { max-width: 700px; margin: 0 auto; }
 
-    .hero h1 {
-      margin: 0;
-      font-size: 40px;
-    }
+    /* Nagłówek */
+    .hero { text-align: center; margin: 40px 0; }
+    .hero h1 { font-size: 2.5rem; margin: 0; }
+    .hero p { color: var(--muted); margin: 10px 0; }
+    .back { color: var(--accent); text-decoration: none; font-weight: 600; }
 
-    .hero p {
-      margin-top: 10px;
-      color: #b8bec8;
-      font-size: 18px;
-    }
-
-    .back {
-      display: inline-block;
-      margin-top: 16px;
-      color: #ff8f8f;
-      text-decoration: none;
-      font-weight: bold;
-    }
-
-    .content {
-      max-width: 900px;
-      margin: 0 auto 60px;
-      padding: 20px;
-      display: grid;
-      gap: 24px;
-    }
-
+    /* Karty */
+    .content { display: grid; gap: 20px; }
     .card {
-      background: #171b22;
-      border-radius: 18px;
+      background: var(--card-bg);
       padding: 28px;
-      box-shadow: 0 14px 32px rgba(0,0,0,0.45);
+      border-radius: 16px;
+      border: 1px solid #2d3436;
+      border-left: 5px solid var(--accent);
     }
 
-    .card h2 {
-      margin: 0 0 18px;
-      font-size: 28px;
-      color: #ff8f8f;
-    }
-
-    .card h3 {
-      margin: 0 0 14px;
-      font-size: 22px;
-      color: #f3f3f3;
-    }
-
-    .card p {
-      margin: 8px 0;
-    }
-
-    .card ul {
-      margin: 10px 0 0 20px;
-      padding: 0;
-    }
-
-    .card li {
-      margin-bottom: 8px;
-    }
-
-    .label {
-      font-weight: bold;
-    }
-
-    .link {
-      color: #ff8f8f;
-      word-break: break-word;
-    }
-
-    .section-letter {
-      color: #ff8f8f;
-      font-weight: bold;
-      margin-bottom: 12px;
-      font-size: 20px;
-    }
-
-    .item {
-      margin-bottom: 22px;
-    }
-
-    .item:last-child {
-      margin-bottom: 0;
-    }
+    .section-title { color: var(--accent); font-weight: 700; margin-bottom: 15px; text-transform: uppercase; letter-spacing: 0.5px; }
+    .card h2 { margin: 0 0 10px; font-size: 1.5rem; color: #fff; }
+    .card h3 { margin: 15px 0 5px; font-size: 1.1rem; color: #fff; }
+    
+    .meta-row { margin: 5px 0; font-size: 0.95rem; }
+    .label { font-weight: 600; color: var(--muted); margin-right: 5px; }
+    .link { color: var(--accent); text-decoration: none; word-break: break-all; border-bottom: 1px solid transparent; }
+    .link:hover { border-bottom-color: var(--accent); }
+    
+    ul { margin: 10px 0; padding-left: 20px; color: var(--text); }
+    li { margin-bottom: 5px; }
   </style>
 </head>
 <body>
-  <section class="hero">
-    <h1>Dzień 3 – Bilety</h1>
-    <p>Panteon → Navona → Campo → Trastevere → Gianicolo → Villa Borghese</p>
-    <a class="back" href="day3.html">← Powrót do Dnia 3</a>
-  </section>
+  <div class="wrap">
+    <section class="hero">
+      <h1>Dzień 3 – Bilety</h1>
+      <p>Panteon → Navona → Campo → Trastevere → Gianicolo → Villa Borghese</p>
+      <a class="back" href="day3.html">← Powrót do Dnia 3</a>
+    </section>
 
-  <section class="content">
-    <div class="card">
-      <div class="section-letter">A) Bilety online (oficjalne linki)</div>
+    <section class="content">
+      <article class="card">
+        <div class="section-title">A) Bilety Online</div>
+        <h3>Panteon</h3>
+        <p class="meta-row"><span class="label">Link:</span> <a class="link" href="https://www.pantheonroma.com/en/visit-the-pantheon/" target="_blank">pantheonroma.com</a></p>
+        <p class="meta-row"><span class="label">Cena:</span> 5 €</p>
+        <p class="meta-row"><span class="label">Dlaczego online:</span> Szybkie wejście, brak kolejek.</p>
+      </article>
 
-      <div class="item">
-        <h3>1. Panteon</h3>
-        <p><span class="label">Oficjalny link:</span><br>
-          <a class="link" href="https://www.pantheonroma.com/en/visit-the-pantheon/" target="_blank">
-            https://www.pantheonroma.com/en/visit-the-pantheon/
-          </a>
-        </p>
-        <p><span class="label">Cena:</span> 5 €</p>
-        <p><span class="label">Dlaczego online:</span> szybkie wejście, brak kolejek</p>
-      </div>
-    </div>
+      <article class="card">
+        <div class="section-title">B) Kasa biletowa</div>
+        <p>Brak — wszystkie miejsca dnia 3 są albo darmowe, albo obsługiwane online.</p>
+      </article>
 
-    <div class="card">
-      <div class="section-letter">B) Bilety tylko w kasie</div>
-      <p>Brak — wszystkie miejsca dnia 3 są darmowe lub mają bilety online.</p>
-    </div>
-
-    <div class="card">
-      <div class="section-letter">C) Bez biletów (darmowe)</div>
-      <ul>
-        <li>Piazza Navona</li>
-        <li>Campo de’ Fiori</li>
-        <li>Trastevere</li>
-        <li>Ponte Sisto</li>
-        <li>Bazylika Santa Maria in Trastevere</li>
-        <li>Wzgórze Gianicolo</li>
-        <li>Ogrody Pomarańczowe</li>
-        <li>Villa Borghese (park)</li>
-      </ul>
-    </div>
-  </section>
+      <article class="card">
+        <div class="section-title">C) Bez biletów (Darmowe)</div>
+        <ul>
+          <li>Piazza Navona</li>
+          <li>Campo de’ Fiori</li>
+          <li>Trastevere</li>
+          <li>Ponte Sisto</li>
+          <li>Bazylika Santa Maria in Trastevere</li>
+          <li>Wzgórze Gianicolo</li>
+          <li>Ogrody Pomarańczowe</li>
+          <li>Villa Borghese (park)</li>
+        </ul>
+      </article>
+    </section>
+  </div>
 </body>
 </html>
